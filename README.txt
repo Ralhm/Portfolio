@@ -1,0 +1,2 @@
+My name's William Rockwell, I'm a C++ game programmer who's been making games in-engine for about 4 years now. I specialize in Unity and Unreal 4/5. Below is a showcase of some of the work I'm proudest of. Passionate about making fun, engaging gameplay mechanics and systems. 
+This is a showcase of some builds and projects I've been working on over the years. If you're an employer looking to hire, feel free to clone it and take a look.
