@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: MageSprites
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList:
+    - m_Name: Hurt
+      m_Hash: 1740614436
+      m_Sprite: {fileID: 3027066790473878008, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 436540100745635326, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Fail
+      m_Hash: 638944375
+      m_Sprite: {fileID: -5313684338027268966, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Sing
+      m_Hash: -1756218067
+      m_Sprite: {fileID: -3841989350821512826, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Angry
+      m_Hash: 16779677
+      m_Sprite: {fileID: -1822160033717139993, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Dead
+      m_Hash: 1293411866
+      m_Sprite: {fileID: 978319059874771899, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+  - m_Name: UpperRobe
+    m_Hash: 222538668
+    m_CategoryList:
+    - m_Name: Hurt
+      m_Hash: 1740614436
+      m_Sprite: {fileID: 4073653156177233598, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: LowerRobe
+    m_Hash: 1830568591
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 3498993022182950330, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: UpperTunic
+    m_Hash: -861960396
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 4262841760410373852, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: LowerTunic
+    m_Hash: 1855498671
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 3967926943686381470, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: UpperRightArm
+    m_Hash: 649272782
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 1931699268011786155, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: UpperLeftArm
+    m_Hash: 1493744570
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -7444492972092942184, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: LowerRightArm
+    m_Hash: 1117181682
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -5364551316933472035, guid: 500b7fef8757d9b47aee240eb423b318,
+        type: 3}
+  - m_Name: LowerLeftArm
+    m_Hash: 392906659
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -8107968066273593953, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+    - m_Name: Behind
+      m_Hash: -1430962478
+      m_Sprite: {fileID: 693162503494954696, guid: a35e989148898b54b8fbb848c831894a,
+        type: 3}
+  - m_Name: RightLeg
+    m_Hash: -2042820100
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 1992367410857937372, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: LeftLeg
+    m_Hash: 101577729
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 4685134679630311464, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}
+  - m_Name: Stick
+    m_Hash: -1904605738
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 7091556111864827588, guid: 3ac6f093c86c6bb44a50cd200480c1d2,
+        type: 3}

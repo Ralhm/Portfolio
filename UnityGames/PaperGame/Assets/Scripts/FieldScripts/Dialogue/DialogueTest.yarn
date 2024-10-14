@@ -1,0 +1,75 @@
+title: DialogueTest
+tags: 
+colorID: 0
+position: -202,-320
+---
+<<if $Spoken_To is false>>
+	<<SetName NPC>>
+	<<SetAnimation Scientist Talk 0>>
+	<<set $Spoken_To to true>>
+	I see you have {$Money} money now.
+	<<Adjust Money>>
+	<<SetAnimation Scientist Shocked 0>>
+	Now you have {$Money} money.
+	<<RemovePortrait 0>>
+	<<SetAnimation Scientist WritingUp 1>>
+	<<AdjustBool Spoken_To 1>>
+	Hi there. This is a test Dialogue. Do you like it?
+	
+	[[Yes.|DialogueTest.Yes]]
+	[[No.|DialogueTest.No]]
+
+<<else>>
+	<<SetName NEWNPC>>
+	<<set $Spoken_To to false>>
+	<<SetAnimation Scientist Talk 1>>
+	Oh, hello again.
+	What do you want now?
+	I'm just a filler NPC.
+	[[I want to buy something.|Buy]]
+	[[I want you|Speak]]
+
+<<endif>>
+
+<<if $SecondSpeak is true>>
+	You still Have {$Money} Money;
+<<endif>>
+
+===
+title: DialogueTest.Yes
+tags: 
+colorID: 0
+position: -410,-35
+---
+<<SetAnimation Scientist Assertive 0>>
+Really? Your standards are pretty low.
+Heheheheheheheeheheheheheheehehehehehehhehehe
+===
+title: DialogueTest.No
+tags: 
+colorID: 0
+position: 22,-72
+---
+<<SetAnimation Scientist Happy 0>>
+Yea, it's just a placeholder.
+===
+
+title: Buy
+tags: 
+colorID: 0
+position: 22,-73
+---
+<<Purchase Money 10>>
+Alright, I'll just take 10 of your money then and give you this.
+I see you have {$Money} money now.
+<<set $SecondSpeak to true>>
+===
+
+title: Speak
+tags: 
+colorID: 0
+position: 22,-74
+---
+Huh? B-But I'm just an NPC, and you're a main character...
+B-Baka!
+===

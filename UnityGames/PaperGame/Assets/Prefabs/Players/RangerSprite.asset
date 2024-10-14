@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: RangerSprite
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -3588842598858510124, guid: f0b31d1a3e49cba4cb07b3d4029b0058,
+        type: 3}
+    - m_Name: Hurt
+      m_Hash: 1740614436
+      m_Sprite: {fileID: 2876126994044967675, guid: f0b31d1a3e49cba4cb07b3d4029b0058,
+        type: 3}
+    - m_Name: Wink
+      m_Hash: 294053457
+      m_Sprite: {fileID: -5072930739678489452, guid: f0b31d1a3e49cba4cb07b3d4029b0058,
+        type: 3}
+    - m_Name: Fail
+      m_Hash: 638944375
+      m_Sprite: {fileID: -2964097716376894401, guid: f0b31d1a3e49cba4cb07b3d4029b0058,
+        type: 3}
+    - m_Name: Dead
+      m_Hash: 1293411866
+      m_Sprite: {fileID: 7200608128787284131, guid: f0b31d1a3e49cba4cb07b3d4029b0058,
+        type: 3}

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: ScientistSprites
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -6609791463510833540, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Hurt
+      m_Hash: 1740614436
+      m_Sprite: {fileID: -2477386888697551863, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Dead
+      m_Hash: 1293411866
+      m_Sprite: {fileID: -1553289562296662533, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Fail
+      m_Hash: 638944375
+      m_Sprite: {fileID: 4321261921067124260, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Smirk
+      m_Hash: -256753965
+      m_Sprite: {fileID: 3397470063235681276, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+  - m_Name: Glasses
+    m_Hash: 958358346
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -8772618543910452756, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Broken
+      m_Hash: -452482750
+      m_Sprite: {fileID: -7882727844398157044, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Fog
+      m_Hash: -1159353357
+      m_Sprite: {fileID: -5308772014273571839, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+  - m_Name: RightHand
+    m_Hash: 1979272496
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -4946231823669886081, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Needles
+      m_Hash: -1531159814
+      m_Sprite: {fileID: 6835862929961512659, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+  - m_Name: LeftHand
+    m_Hash: -1233783956
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: -1812478706683105007, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}
+    - m_Name: Needles
+      m_Hash: -1531159814
+      m_Sprite: {fileID: 66372710951877128, guid: ef840d9797b18c74bb23bac4ebf255c9,
+        type: 3}

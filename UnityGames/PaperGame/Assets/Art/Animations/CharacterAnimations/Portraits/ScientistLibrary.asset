@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: ScientistLibrary
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Pose
+    m_Hash: -1878465727
+    m_CategoryList:
+    - m_Name: Neutral
+      m_Hash: 1805245548
+      m_Sprite: {fileID: -492498970721540373, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Think
+      m_Hash: -1824829524
+      m_Sprite: {fileID: 8472549248233177353, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: NeutralMouth
+    m_Hash: 462413549
+    m_CategoryList:
+    - m_Name: Neutral1
+      m_Hash: -944547048
+      m_Sprite: {fileID: 5370055864096886701, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Neutral2
+      m_Hash: 1589250722
+      m_Sprite: {fileID: 1625679105282078001, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Neutral3
+      m_Hash: 700267060
+      m_Sprite: {fileID: 1783112265764050796, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Neutral4
+      m_Hash: -1210470505
+      m_Sprite: {fileID: 1393810978192093976, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Shocked1
+      m_Hash: -745124212
+      m_Sprite: {fileID: -7897297262401357299, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Shocked2
+      m_Hash: 1251942198
+      m_Sprite: {fileID: 3062764788336523244, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Shocked3
+      m_Hash: 1033383840
+      m_Sprite: {fileID: -8397461266577534823, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Smug1
+      m_Hash: 1501903417
+      m_Sprite: {fileID: -8189892992142089666, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Smug2
+      m_Hash: -1064539261
+      m_Sprite: {fileID: 6151773522111696984, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Smug3
+      m_Hash: -1215603947
+      m_Sprite: {fileID: 6097997912732743128, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Smug4
+      m_Hash: 703581878
+      m_Sprite: {fileID: 7788682576512335193, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: NeutralEyes
+    m_Hash: -2002217276
+    m_CategoryList:
+    - m_Name: NeutralOpen
+      m_Hash: -1950211594
+      m_Sprite: {fileID: 6956165864001591029, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: NeutralMiddle
+      m_Hash: 785762415
+      m_Sprite: {fileID: 6580749967371285630, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: NeutralClosed
+      m_Hash: -1265459388
+      m_Sprite: {fileID: -750728493966276362, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: ShockedOpen
+      m_Hash: 224986013
+      m_Sprite: {fileID: 2948890654108070008, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: ShockedMiddle
+      m_Hash: 2109521228
+      m_Sprite: {fileID: 1040387389578212860, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: ShockedClosed
+      m_Hash: -402920857
+      m_Sprite: {fileID: 4174924819495283898, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: NeutralHead
+    m_Hash: -2008984370
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 6402520900982435386, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: -2516174528898014777, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: ThinkingFinger
+    m_Hash: 599914853
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 1250373303959180615, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: -3314945915655698977, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 1367944351814013823, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: WritingMouth
+    m_Hash: -1925245703
+    m_CategoryList:
+    - m_Name: Writing1
+      m_Hash: 496656336
+      m_Sprite: {fileID: -509819606981486459, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Writing2
+      m_Hash: -2070737302
+      m_Sprite: {fileID: 4897619356985651557, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Writing3
+      m_Hash: -208388356
+      m_Sprite: {fileID: -7799818916362926640, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Writing4
+      m_Hash: 1844489055
+      m_Sprite: {fileID: -143352405628810179, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Writing5
+      m_Hash: 452434889
+      m_Sprite: {fileID: -3334623773859254903, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Assertive1
+      m_Hash: -1254893633
+      m_Sprite: {fileID: 5574132691015795582, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Assertive2
+      m_Hash: 742032901
+      m_Sprite: {fileID: -3299811906237485960, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Assertive3
+      m_Hash: 1530771091
+      m_Sprite: {fileID: 8264831813859782049, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: Assertive4
+      m_Hash: -984014032
+      m_Sprite: {fileID: 6456278363014357047, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: WritingHead
+    m_Hash: 824430212
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 6411386687969763769, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 1926697711242082129, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+  - m_Name: WritingEyes
+    m_Hash: 835325070
+    m_CategoryList:
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: -5039537429024779021, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 1854726751901896963, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 6552888326993364739, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 3160200888399321244, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 5
+      m_Hash: -2068763730
+      m_Sprite: {fileID: -8586591002094415919, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 6
+      m_Hash: 498629140
+      m_Sprite: {fileID: -1734653551292495010, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 7
+      m_Hash: 1790921346
+      m_Sprite: {fileID: -1845083309233093368, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
+    - m_Name: 8
+      m_Hash: -100641005
+      m_Sprite: {fileID: -3666904270285959350, guid: 265d20a61a8a27a4cb171ac47b9787d1,
+        type: 3}
