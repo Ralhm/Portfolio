@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb50eb716df2640807731c1e025c4d, type: 3}
+  m_Name: ElecShot
+  m_EditorClassIdentifier: 
+  ItemSprite: {fileID: 7438314934014844418, guid: 1d75c2334e15ef242b522ba976b9afb6, type: 3}
+  ItemName: ElecShot
+  ItemDescription: shoots electricity
+  Price: 3
+  Properties: []
+  player: {fileID: 0}
+  property: 2
+  type: 0
+  Cancellable: 1
+  SpellName: 
+  ManaCost: 0.2
+  Damage: 2
+  AOE: 0
+  HeatAmount: 0.3
+  SFX: {fileID: 0}
+  Active: 1
+  BulletClass: {fileID: 7590829771253259269, guid: 1b75947400bc5584eaa7c1bd01d14a21, type: 3}
+  FireRate: 0.3
+  DestroyOnContact: 0

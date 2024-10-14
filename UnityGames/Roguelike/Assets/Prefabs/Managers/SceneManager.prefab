@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8015120423729887107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464960751277958479}
+  - component: {fileID: 1237561274173392677}
+  - component: {fileID: 7892165798772268596}
+  - component: {fileID: 6740912070507804169}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464960751277958479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015120423729887107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.999146, y: -20.100994, z: -4.0743356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1237561274173392677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015120423729887107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a40a35b01a1c14d8e374b36f802fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClearedRooms: 0
+  NumRooms: 0
+  Saver: {fileID: 7892165798772268596}
+  Pool: {fileID: 6740912070507804169}
+  KeyRef: {fileID: 8925513975971343030, guid: 0626b9de09bd6464db53745a3be7df5c, type: 3}
+--- !u!114 &7892165798772268596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015120423729887107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce348a09216bf4892e7758f21355eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: Player.dat
+--- !u!114 &6740912070507804169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015120423729887107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8ed887502ca384f8fe575fa04dc500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledMoney: []
+  PooledCrystals: []
+  PooledHealth: []
+  PooledDamage: []
+  MoneyRef: {fileID: 7526092891248290016, guid: 893cf398bd3ba3045b569e4220a49dca, type: 3}
+  CrystalRef: {fileID: 7877800462503962212, guid: fa8a06d121028b44b92ca020e6882a19, type: 3}
+  HealthRef: {fileID: 5526226960253543418, guid: fd44de6f330e41549b1b9a5eb0a5a3d8, type: 3}
+  ParticleRef: {fileID: 6432528998686042943, guid: ab34afd5de32b3c448ca453ec250e64c, type: 3}

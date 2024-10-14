@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3082126105649866617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057621246322522990}
+  - component: {fileID: 2941748417830852309}
+  m_Layer: 0
+  m_Name: A_ItemListContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2057621246322522990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082126105649866617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.7108545, y: 0.86277574, z: 0.8542569}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2941748417830852309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082126105649866617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6763dc5e91e3d4b4b883d97857640230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: e4d867a4413af0546a61b0340dcffd64, type: 2}
+  - {fileID: 11400000, guid: f8a43b3f871dcbd4483b5069ad5ff713, type: 2}
+  - {fileID: 11400000, guid: 5eb3e10c79e66624782c11395c624dde, type: 2}
+  - {fileID: 11400000, guid: 22d9e51fa5ab6c64481284494d9190b7, type: 2}
+  - {fileID: 11400000, guid: 272905a8dc45fd641be39306dfef7d0c, type: 2}
+  - {fileID: 11400000, guid: cdb6c0ffa7faf4a449c81f1523ac5a0e, type: 2}
+  - {fileID: 11400000, guid: 284f14a699151f24f9eceefc00e4fe75, type: 2}
+  - {fileID: 11400000, guid: 9e9e99dffbad1b842b080f005c536fe0, type: 2}
+  - {fileID: 11400000, guid: 5ee5cb1a5d59ccd4dae0aaad1cb78f94, type: 2}
+  - {fileID: 11400000, guid: 4ef189fd36f30fa46a8a1334e852ea15, type: 2}
+  - {fileID: 11400000, guid: 5ad36e7e24514d94e921c47569be5a3a, type: 2}
+  - {fileID: 11400000, guid: a9d7c441fe4743c41b720c1a546c6208, type: 2}
+  - {fileID: 11400000, guid: edc70475269b14749a3981fdc0ddd384, type: 2}
+  - {fileID: 11400000, guid: d23084431b8a5d54ebffce2e0c924614, type: 2}
+  - {fileID: 11400000, guid: 4edbf135ed343df419580cde5bf3eb82, type: 2}
+  - {fileID: 11400000, guid: 9e0e4e3da29e2bc4b9d03cdff1805f15, type: 2}
+  - {fileID: 11400000, guid: 67ca8693a8305624d84f82d029cb5dfb, type: 2}
+  - {fileID: 11400000, guid: 61ee767cc7d6d3b40a757e234a25c5ad, type: 2}
+  - {fileID: 11400000, guid: 5eb7a611a807261419d9584a3855c9e5, type: 2}
+  - {fileID: 11400000, guid: 5c47accb91450c64baafbf62e23c80d9, type: 2}
+  - {fileID: 11400000, guid: 3edca48e806fe0a4d9fdb28b64dbfabb, type: 2}
+  - {fileID: 11400000, guid: f054458d599fa5041b53a8855009dfa2, type: 2}
+  - {fileID: 11400000, guid: 2b6baade502eb0e4a96ea5b5722c02ec, type: 2}
+  - {fileID: 11400000, guid: aa39899983172394a8352236c0279a25, type: 2}
+  - {fileID: 11400000, guid: e1747f205b1e5794aa7bd23b721a5208, type: 2}
+  - {fileID: 11400000, guid: 7422a3eda0753264792680f44b90e70f, type: 2}
+  - {fileID: 11400000, guid: 87880b49b4f41f6498f9693a719f6d21, type: 2}
+  - {fileID: 11400000, guid: dce64493e88def140ac8374b14127574, type: 2}
+  - {fileID: 11400000, guid: 1a5e2021bb41bf946b560dafa72f1473, type: 2}
+  - {fileID: 11400000, guid: 247e66e106e23f74caac3597ce7cf0c6, type: 2}
+  - {fileID: 11400000, guid: f5766f1ce5f84fe4b8487d51b0b17be8, type: 2}
+  - {fileID: 11400000, guid: 62b2684a60d0c7541bc5ba0b3f61343a, type: 2}
+  - {fileID: 11400000, guid: 0e49844540e38544a8343eaeecd9b576, type: 2}
+  - {fileID: 11400000, guid: 6b8953f8d95ee2d4ca16bc467d54c657, type: 2}
+  - {fileID: 11400000, guid: 6ef4b619458bf724ab9cceee57172a79, type: 2}
+  - {fileID: 11400000, guid: 8dc69f14058c5d048a6d55e589ad1f57, type: 2}
+  - {fileID: 11400000, guid: 79e62e93266af904fb0340dc4c81c73f, type: 2}

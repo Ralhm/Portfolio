@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7039696337196410997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8443194830558934182}
+  - component: {fileID: 1519543286348293126}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8443194830558934182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039696337196410997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.78, y: 0.32, z: 2.12075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519543286348293126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039696337196410997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effe7f09d78e67f4ea29a96202b7aeba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemiesToSpawn: 1
+  SpawnOffset: 3
+  Enemies:
+  - {fileID: 7552847451858738833, guid: 4310720ce61956c4b8e4c2c69f8b260e, type: 3}
+  - {fileID: 684085579365373058, guid: 9917929102c372543af9443b06bc7470, type: 3}
+  - {fileID: 5483203536704231508, guid: 9139d64862709884783877548d91e139, type: 3}
+  - {fileID: 1730459988750518729, guid: 12fa93d7de7f22f43a6b553ef6c6a66b, type: 3}
+  - {fileID: 3622367256120139306, guid: b5b9e2461d7aa4046923b2b0ad150ee3, type: 3}
+  - {fileID: 8754278202796835508, guid: 7c7b3eda19292e344b7c3453bbc289d6, type: 3}
+  - {fileID: 6094415962092437207, guid: e3ce7ef41c053a24b83f17a0abaf2cb8, type: 3}
+  CurrentRoom: {fileID: 0}

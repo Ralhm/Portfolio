@@ -1,0 +1,1614 @@
+fileFormatVersion: 2
+guid: 51ccea316d13fcd438c2e4163ac9542c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8959872140989847632
+    second: monospaced_font_0
+  - first:
+      213: 5565641113245234899
+    second: monospaced_font_1
+  - first:
+      213: 1977309564125480450
+    second: monospaced_font_2
+  - first:
+      213: 6205781981991232835
+    second: monospaced_font_3
+  - first:
+      213: 6786355329290223708
+    second: monospaced_font_4
+  - first:
+      213: 4373604016838668147
+    second: monospaced_font_5
+  - first:
+      213: -3687980254089742306
+    second: monospaced_font_6
+  - first:
+      213: -3796930751932870116
+    second: monospaced_font_7
+  - first:
+      213: 624320805031028789
+    second: monospaced_font_8
+  - first:
+      213: 2009549521689805910
+    second: monospaced_font_9
+  - first:
+      213: 7351165183070136525
+    second: monospaced_font_10
+  - first:
+      213: -7022122162260085360
+    second: monospaced_font_11
+  - first:
+      213: -7921633125194738539
+    second: monospaced_font_12
+  - first:
+      213: 8628481660650599968
+    second: monospaced_font_13
+  - first:
+      213: 7016474770738755138
+    second: monospaced_font_14
+  - first:
+      213: 1842286038833304055
+    second: monospaced_font_15
+  - first:
+      213: -4884160667806512964
+    second: monospaced_font_16
+  - first:
+      213: 455522993945142141
+    second: monospaced_font_17
+  - first:
+      213: -311628180206284250
+    second: monospaced_font_18
+  - first:
+      213: -5512758609982523353
+    second: monospaced_font_19
+  - first:
+      213: 8775507576832028736
+    second: monospaced_font_20
+  - first:
+      213: 4294481711446361429
+    second: monospaced_font_21
+  - first:
+      213: 4010753477684051331
+    second: monospaced_font_22
+  - first:
+      213: -8827881653631416369
+    second: monospaced_font_23
+  - first:
+      213: -9153925180672932129
+    second: monospaced_font_24
+  - first:
+      213: -2478795958775305136
+    second: monospaced_font_25
+  - first:
+      213: 1052626070175136035
+    second: monospaced_font_26
+  - first:
+      213: -2082961873177884698
+    second: monospaced_font_27
+  - first:
+      213: -5799620808738774365
+    second: monospaced_font_28
+  - first:
+      213: -3870546419535353283
+    second: monospaced_font_29
+  - first:
+      213: 2528950871747126045
+    second: monospaced_font_30
+  - first:
+      213: -8999974522824849867
+    second: monospaced_font_31
+  - first:
+      213: 6028615478512403497
+    second: monospaced_font_32
+  - first:
+      213: -3184000904568741091
+    second: monospaced_font_33
+  - first:
+      213: 5114628330992977433
+    second: monospaced_font_34
+  - first:
+      213: -5510405701310421148
+    second: monospaced_font_35
+  - first:
+      213: 970147579400493883
+    second: monospaced_font_36
+  - first:
+      213: 5584172776569906103
+    second: monospaced_font_37
+  - first:
+      213: -8108215955752455662
+    second: monospaced_font_38
+  - first:
+      213: -779832425214800153
+    second: monospaced_font_39
+  - first:
+      213: 6034733452486172641
+    second: monospaced_font_40
+  - first:
+      213: 1265667471212973207
+    second: monospaced_font_41
+  - first:
+      213: -3642210416415884767
+    second: monospaced_font_42
+  - first:
+      213: -1650679711313107248
+    second: monospaced_font_43
+  - first:
+      213: -1196584620360884136
+    second: monospaced_font_44
+  - first:
+      213: 7176895128340930150
+    second: monospaced_font_45
+  - first:
+      213: 1184155507473370753
+    second: monospaced_font_46
+  - first:
+      213: -7417193593137331667
+    second: monospaced_font_47
+  - first:
+      213: 7495890754903078917
+    second: monospaced_font_48
+  - first:
+      213: -2473200168712510141
+    second: monospaced_font_49
+  - first:
+      213: 4942916417893489593
+    second: monospaced_font_50
+  - first:
+      213: -8313417494587685413
+    second: monospaced_font_51
+  - first:
+      213: -2524582395481372368
+    second: monospaced_font_52
+  - first:
+      213: 5761428400310632674
+    second: monospaced_font_53
+  - first:
+      213: -2983668138425196277
+    second: monospaced_font_54
+  - first:
+      213: -6400949990056079978
+    second: monospaced_font_55
+  - first:
+      213: -144120340088791783
+    second: monospaced_font_56
+  - first:
+      213: -7977205243314564827
+    second: monospaced_font_57
+  - first:
+      213: 1518634678572859712
+    second: monospaced_font_58
+  - first:
+      213: 1549892712083711920
+    second: monospaced_font_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monospaced_font_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 487
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7a16b52c328a380800000000000000
+      internalID: -8959872140989847632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 487
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6ba4eba112d3d40800000000000000
+      internalID: 5565641113245234899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 469
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2068ea48290d07b10800000000000000
+      internalID: 1977309564125480450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 493
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3456b1e35dd5f1650800000000000000
+      internalID: 6205781981991232835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_4
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 499
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c504ce1673afd2e50800000000000000
+      internalID: 6786355329290223708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_5
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 469
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fe3e35ea922bc30800000000000000
+      internalID: 4373604016838668147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 469
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e187358af79a1dcc0800000000000000
+      internalID: -3687980254089742306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_7
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 487
+        width: 33
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12d84e19979e4bc0800000000000000
+      internalID: -3796930751932870116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_8
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 469
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538a2c1e6780aa800800000000000000
+      internalID: 624320805031028789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_9
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 469
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65480e694aa53eb10800000000000000
+      internalID: 2009549521689805910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_10
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 469
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc86d1e29c5940660800000000000000
+      internalID: 7351165183070136525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 469
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095f61529196c8e90800000000000000
+      internalID: -7022122162260085360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 441
+        width: 46
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594dccba4a4b01290800000000000000
+      internalID: -7921633125194738539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_13
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0263d0eca568eb770800000000000000
+      internalID: 8628481660650599968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_14
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 429
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246bf5d01a68f5160800000000000000
+      internalID: 7016474770738755138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_15
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 417
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f11257346d119910800000000000000
+      internalID: 1842286038833304055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8457100c9f73cb0800000000000000
+      internalID: -4884160667806512964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d736f11efb7525600800000000000000
+      internalID: 455522993945142141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_18
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6229dc832dfdcabf0800000000000000
+      internalID: -311628180206284250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_19
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728f387804fbe73b0800000000000000
+      internalID: -5512758609982523353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_20
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04072d085add8c970800000000000000
+      internalID: 8775507576832028736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_21
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 417
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5550c290d50199b30800000000000000
+      internalID: 4294481711446361429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 429
+        width: 46
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d350fb90f09a730800000000000000
+      internalID: 4010753477684051331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_23
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 417
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc78c1c78601d7580800000000000000
+      internalID: -8827881653631416369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 365
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd68c793c89b6f080800000000000000
+      internalID: -9153925180672932129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_25
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 365
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c268e653c899dd0800000000000000
+      internalID: -2478795958775305136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_26
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329ba1275ddab9e00800000000000000
+      internalID: 1052626070175136035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_27
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e7cc8c5635d713e0800000000000000
+      internalID: -2082961873177884698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_28
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a269272a9b938fa0800000000000000
+      internalID: -5799620808738774365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_29
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 365
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a6fe8d98e094ac0800000000000000
+      internalID: -3870546419535353283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_30
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 365
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13e6ec3b63a81320800000000000000
+      internalID: 2528950871747126045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_31
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536857bfadaa91380800000000000000
+      internalID: -8999974522824849867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_32
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924472436d1f9a350800000000000000
+      internalID: 6028615478512403497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_33
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 365
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1368aefb0820d3d0800000000000000
+      internalID: -3184000904568741091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9164cfa5e5fcaf640800000000000000
+      internalID: 5114628330992977433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_35
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467ea15c53b1783b0800000000000000
+      internalID: -5510405701310421148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_36
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b1fd95518a67d00800000000000000
+      internalID: 970147579400493883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_37
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b32bd7dd87fe7d40800000000000000
+      internalID: 5584172776569906103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_38
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21278332c84d97f80800000000000000
+      internalID: -8108215955752455662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_39
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee8dbe7a8a7d25f0800000000000000
+      internalID: -779832425214800153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_40
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1efda950a1eafb350800000000000000
+      internalID: 6034733452486172641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_41
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c8a69fbdd809110800000000000000
+      internalID: 1265667471212973207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_42
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 313
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12abd4c6ce4447dc0800000000000000
+      internalID: -3642210416415884767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_43
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 313
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6ec395c8b9719e0800000000000000
+      internalID: -1650679711313107248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_44
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 261
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850a1b7a0a0e46fe0800000000000000
+      internalID: -1196584620360884136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_45
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 261
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e1efa2814799360800000000000000
+      internalID: 7176895128340930150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_46
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 285
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ec5cdf827fe6010800000000000000
+      internalID: 1184155507473370753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_47
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 261
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d220fba99b5d01990800000000000000
+      internalID: -7417193593137331667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_48
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 267
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508f1293de0c60860800000000000000
+      internalID: 7495890754903078917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_49
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 260
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3456475dc8d6dadd0800000000000000
+      internalID: -2473200168712510141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_50
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 260
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbdcfa1b44c89440800000000000000
+      internalID: 4942916417893489593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_51
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 260
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd54595c5dec0ac80800000000000000
+      internalID: -8313417494587685413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_52
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 260
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039c027efa1e6fcd0800000000000000
+      internalID: -2524582395481372368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_53
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 261
+        width: 46
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0cc5fca94b4ff40800000000000000
+      internalID: 5761428400310632674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_54
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 210
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01e381e2a1e796d0800000000000000
+      internalID: -2983668138425196277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_55
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 209
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69dcaa1d5e14b27a0800000000000000
+      internalID: -6400949990056079978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_56
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 210
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d5914705bfffdf0800000000000000
+      internalID: -144120340088791783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_57
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 210
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5211ad3a8164b4190800000000000000
+      internalID: -7977205243314564827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_58
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 210
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041ccefa136431510800000000000000
+      internalID: 1518634678572859712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monospaced_font_59
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 210
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b767bfb533528510800000000000000
+      internalID: 1549892712083711920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      monospaced_font_0: -8959872140989847632
+      monospaced_font_1: 5565641113245234899
+      monospaced_font_10: 7351165183070136525
+      monospaced_font_11: -7022122162260085360
+      monospaced_font_12: -7921633125194738539
+      monospaced_font_13: 8628481660650599968
+      monospaced_font_14: 7016474770738755138
+      monospaced_font_15: 1842286038833304055
+      monospaced_font_16: -4884160667806512964
+      monospaced_font_17: 455522993945142141
+      monospaced_font_18: -311628180206284250
+      monospaced_font_19: -5512758609982523353
+      monospaced_font_2: 1977309564125480450
+      monospaced_font_20: 8775507576832028736
+      monospaced_font_21: 4294481711446361429
+      monospaced_font_22: 4010753477684051331
+      monospaced_font_23: -8827881653631416369
+      monospaced_font_24: -9153925180672932129
+      monospaced_font_25: -2478795958775305136
+      monospaced_font_26: 1052626070175136035
+      monospaced_font_27: -2082961873177884698
+      monospaced_font_28: -5799620808738774365
+      monospaced_font_29: -3870546419535353283
+      monospaced_font_3: 6205781981991232835
+      monospaced_font_30: 2528950871747126045
+      monospaced_font_31: -8999974522824849867
+      monospaced_font_32: 6028615478512403497
+      monospaced_font_33: -3184000904568741091
+      monospaced_font_34: 5114628330992977433
+      monospaced_font_35: -5510405701310421148
+      monospaced_font_36: 970147579400493883
+      monospaced_font_37: 5584172776569906103
+      monospaced_font_38: -8108215955752455662
+      monospaced_font_39: -779832425214800153
+      monospaced_font_4: 6786355329290223708
+      monospaced_font_40: 6034733452486172641
+      monospaced_font_41: 1265667471212973207
+      monospaced_font_42: -3642210416415884767
+      monospaced_font_43: -1650679711313107248
+      monospaced_font_44: -1196584620360884136
+      monospaced_font_45: 7176895128340930150
+      monospaced_font_46: 1184155507473370753
+      monospaced_font_47: -7417193593137331667
+      monospaced_font_48: 7495890754903078917
+      monospaced_font_49: -2473200168712510141
+      monospaced_font_5: 4373604016838668147
+      monospaced_font_50: 4942916417893489593
+      monospaced_font_51: -8313417494587685413
+      monospaced_font_52: -2524582395481372368
+      monospaced_font_53: 5761428400310632674
+      monospaced_font_54: -2983668138425196277
+      monospaced_font_55: -6400949990056079978
+      monospaced_font_56: -144120340088791783
+      monospaced_font_57: -7977205243314564827
+      monospaced_font_58: 1518634678572859712
+      monospaced_font_59: 1549892712083711920
+      monospaced_font_6: -3687980254089742306
+      monospaced_font_7: -3796930751932870116
+      monospaced_font_8: 624320805031028789
+      monospaced_font_9: 2009549521689805910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

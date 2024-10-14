@@ -1,0 +1,1346 @@
+fileFormatVersion: 2
+guid: 1d75c2334e15ef242b522ba976b9afb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2041410669933374138
+    second: Game_Sprites_0
+  - first:
+      213: -4203869610656369703
+    second: Game_Sprites_1
+  - first:
+      213: 6770450193382083205
+    second: Game_Sprites_2
+  - first:
+      213: -6511830294663249451
+    second: Game_Sprites_3
+  - first:
+      213: 7438314934014844418
+    second: Game_Sprites_4
+  - first:
+      213: -5780328680481788669
+    second: Game_Sprites_5
+  - first:
+      213: -583812115248566978
+    second: Game_Sprites_6
+  - first:
+      213: 680971232134847931
+    second: Game_Sprites_7
+  - first:
+      213: 4544885157340031993
+    second: Game_Sprites_8
+  - first:
+      213: 15961978980156282
+    second: Game_Sprites_9
+  - first:
+      213: -6188524305508108735
+    second: Game_Sprites_10
+  - first:
+      213: 8612599090800518271
+    second: Game_Sprites_11
+  - first:
+      213: -5417292004766682695
+    second: Game_Sprites_12
+  - first:
+      213: -2367141663970629430
+    second: Game_Sprites_13
+  - first:
+      213: 7513030418343285415
+    second: Game_Sprites_14
+  - first:
+      213: -4916598849951423865
+    second: Game_Sprites_15
+  - first:
+      213: 3513121022379517277
+    second: Game_Sprites_16
+  - first:
+      213: 5400156626884980292
+    second: Game_Sprites_17
+  - first:
+      213: 4136900903909083786
+    second: Game_Sprites_18
+  - first:
+      213: -5311934145388841884
+    second: Game_Sprites_19
+  - first:
+      213: -6111374231483406014
+    second: Game_Sprites_20
+  - first:
+      213: 7061342953390678599
+    second: Game_Sprites_21
+  - first:
+      213: -5168097807961651530
+    second: Game_Sprites_22
+  - first:
+      213: 1428577701491368625
+    second: Game_Sprites_23
+  - first:
+      213: 1567257589581097276
+    second: Game_Sprites_24
+  - first:
+      213: -7623840414698082604
+    second: Game_Sprites_25
+  - first:
+      213: 6649241809755062868
+    second: Game_Sprites_26
+  - first:
+      213: -6115693180780919110
+    second: Game_Sprites_27
+  - first:
+      213: 4080814183286408208
+    second: Game_Sprites_28
+  - first:
+      213: 7604988637252430048
+    second: Game_Sprites_29
+  - first:
+      213: 1682284295852818859
+    second: Game_Sprites_30
+  - first:
+      213: 7009537481667809750
+    second: Game_Sprites_31
+  - first:
+      213: 4742978068330607305
+    second: Game_Sprites_32
+  - first:
+      213: -398016979469450298
+    second: Game_Sprites_33
+  - first:
+      213: -1728191612023890219
+    second: Game_Sprites_34
+  - first:
+      213: 152623821204597742
+    second: Game_Sprites_35
+  - first:
+      213: 3846523890774562742
+    second: Game_Sprites_36
+  - first:
+      213: 7969968429322810489
+    second: Game_Sprites_37
+  - first:
+      213: 701857987424451249
+    second: Game_Sprites_38
+  - first:
+      213: -1384222218382276601
+    second: Game_Sprites_39
+  - first:
+      213: 1211692917003772760
+    second: Game_Sprites_40
+  - first:
+      213: 6629685620077825059
+    second: Game_Sprites_41
+  - first:
+      213: -1819153984341775588
+    second: Game_Sprites_42
+  - first:
+      213: 7801277816745263531
+    second: Game_Sprites_43
+  - first:
+      213: 5080205916619997422
+    second: Game_Sprites_44
+  - first:
+      213: -6295585453631230788
+    second: Game_Sprites_45
+  - first:
+      213: 588537886239838886
+    second: Game_Sprites_46
+  - first:
+      213: 2849431490703580894
+    second: Game_Sprites_47
+  - first:
+      213: -2657958438883909648
+    second: Game_Sprites_48
+  - first:
+      213: 1590572854435931983
+    second: Game_Sprites_49
+  - first:
+      213: -288177993039552898
+    second: Game_Sprites_50
+  - first:
+      213: -8393545431580001078
+    second: Game_Sprites_51
+  - first:
+      213: -6213746448083413945
+    second: Game_Sprites_52
+  - first:
+      213: -4368515580901015494
+    second: Game_Sprites_53
+  - first:
+      213: -997533022221590401
+    second: Game_Sprites_54
+  - first:
+      213: 8079441880838785639
+    second: Game_Sprites_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spell_Melee
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 997
+        width: 143
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645dde1cfc37ba3e0800000000000000
+      internalID: -2041410669933374138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell_Projectile
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1008
+        width: 151
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d374c6bcdad8a5c0800000000000000
+      internalID: -4203869610656369703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell_Special
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1012
+        width: 129
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a830a549875fd50800000000000000
+      internalID: 6770450193382083205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell_FireShpt
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 1018
+        width: 77
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d148f029d451a5a0800000000000000
+      internalID: -6511830294663249451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell_ElecShot
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1001
+        width: 74
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e1079c5043a3760800000000000000
+      internalID: 7438314934014844418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell_IceShot
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1007
+        width: 176
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d61eac0b528cfa0800000000000000
+      internalID: -5780328680481788669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Rock
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 999
+        width: 96
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd58a94abb437900800000000000000
+      internalID: 680971232134847931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Battery
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1002
+        width: 133
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fba23488fca21f30800000000000000
+      internalID: 4544885157340031993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_SpeedBoots
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 818
+        width: 155
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146715eaee1fd1aa0800000000000000
+      internalID: -6188524305508108735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Health_potion
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 837
+        width: 129
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f746408dd39168770800000000000000
+      internalID: 8612599090800518271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_ManaPotion
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 828
+        width: 129
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1715baf99e1d4b0800000000000000
+      internalID: -5417292004766682695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Heat_Potion
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 834
+        width: 128
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8e002c239362fd0800000000000000
+      internalID: -2367141663970629430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Blood_Vial
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 821
+        width: 78
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a25e081c55a34860800000000000000
+      internalID: 7513030418343285415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Staff
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 809
+        width: 123
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7822d8d256bb4cbb0800000000000000
+      internalID: -4916598849951423865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Arrow
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 802
+        width: 161
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5563efd4fc11c030800000000000000
+      internalID: 3513121022379517277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Cloud
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 801
+        width: 148
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a4e703479396930800000000000000
+      internalID: 4136900903909083786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_FireGuy
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 633
+        width: 99
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b688f7ec6a3748b0800000000000000
+      internalID: -5168097807961651530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Hat
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 646
+        width: 151
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2ef6fb9d353d310800000000000000
+      internalID: 1428577701491368625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Earrings
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 648
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39248a597400c510800000000000000
+      internalID: 1567257589581097276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_MoonEmblem
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 648
+        width: 122
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de67a1298da23690800000000000000
+      internalID: -7623840414698082604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_StarEmblem
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 640
+        width: 114
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4524020623ad64c50800000000000000
+      internalID: 6649241809755062868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Raimant
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 616
+        width: 152
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab646445471b02ba0800000000000000
+      internalID: -6115693180780919110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_BigHat
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 646
+        width: 151
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e820546fd85a8960800000000000000
+      internalID: 7604988637252430048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Doll
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 595
+        width: 137
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1868967aca85710800000000000000
+      internalID: 1682284295852818859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Roe
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 427
+        width: 146
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d198929331e64160800000000000000
+      internalID: 7009537481667809750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Ring
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 434
+        width: 128
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2705c7c6172d140800000000000000
+      internalID: 4742978068330607305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Box
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 436
+        width: 114
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3462c7aa5f97af0800000000000000
+      internalID: -398016979469450298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Fan
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 419
+        width: 140
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de918d92ea3408e0800000000000000
+      internalID: -1728191612023890219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Tortoise
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 439
+        width: 145
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeba9278e8a3e1200800000000000000
+      internalID: 152623821204597742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Skull
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 432
+        width: 129
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b7dba15919916530800000000000000
+      internalID: 3846523890774562742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Broom
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 404
+        width: 169
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9743ddc4f040b9e60800000000000000
+      internalID: 7969968429322810489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Steak
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 447
+        width: 99
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba7437fe108db900800000000000000
+      internalID: 701857987424451249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Scarf
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 236
+        width: 146
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7080f1fe9314acce0800000000000000
+      internalID: -1384222218382276601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Barrette
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 236
+        width: 138
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853edd6c94cc0d010800000000000000
+      internalID: 1211692917003772760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Orb
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 236
+        width: 96
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c014522ff510c50800000000000000
+      internalID: 6629685620077825059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Ice
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 236
+        width: 110
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b629be61111c6e0800000000000000
+      internalID: -1819153984341775588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Bear
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 229
+        width: 118
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba18c3567d4b34c60800000000000000
+      internalID: 7801277816745263531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Heels
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 238
+        width: 144
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee009f57d54808640800000000000000
+      internalID: 5080205916619997422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Bunny
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 214
+        width: 73
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbca137a26691a8a0800000000000000
+      internalID: -6295585453631230788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Pepper
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 249
+        width: 118
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a25f2ed618ea2800800000000000000
+      internalID: 588537886239838886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_AngelCandy
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 52
+        width: 130
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eded23708d63b8720800000000000000
+      internalID: 2849431490703580894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_DevilCandy
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 53
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47680a7599d21610800000000000000
+      internalID: 1590572854435931983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Money1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 59
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7edac464af200cf0800000000000000
+      internalID: -288177993039552898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Money2
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 61
+        width: 94
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc3290a6e2248b80800000000000000
+      internalID: -8393545431580001078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Crystal
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 33
+        width: 48
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74494adf68654c9a0800000000000000
+      internalID: -6213746448083413945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_HeartRock
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 40
+        width: 103
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30c2ac793aef53c0800000000000000
+      internalID: -4368515580901015494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_CatEars
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 60
+        width: 161
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70a2ce500d0822f0800000000000000
+      internalID: -997533022221590401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Money3
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 49
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a4fca7591ff1070800000000000000
+      internalID: 8079441880838785639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6957a6a383243734a94903812ac9a4ff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Game_Sprites_17: 5400156626884980292
+      Game_Sprites_19: -5311934145388841884
+      Game_Sprites_20: -6111374231483406014
+      Game_Sprites_21: 7061342953390678599
+      Game_Sprites_28: 4080814183286408208
+      Game_Sprites_48: -2657958438883909648
+      Game_Sprites_6: -583812115248566978
+      Game_Sprites_9: 15961978980156282
+      Item_AngelCandy: 2849431490703580894
+      Item_Arrow: -4916598849951423865
+      Item_Barrette: 1211692917003772760
+      Item_Battery: 4136900903909083786
+      Item_Bear: 7801277816745263531
+      Item_BigHat: 1682284295852818859
+      Item_Blood_Vial: -2367141663970629430
+      Item_Box: -398016979469450298
+      Item_Broom: 7969968429322810489
+      Item_Bunny: -6295585453631230788
+      Item_CatEars: -997533022221590401
+      Item_Cloud: 3513121022379517277
+      Item_DevilCandy: 1590572854435931983
+      Item_Doll: -6115693180780919110
+      Item_Earrings: 1567257589581097276
+      Item_Fan: -1728191612023890219
+      Item_FireGuy: -5168097807961651530
+      Item_Hat: 1428577701491368625
+      Item_Health_potion: -6188524305508108735
+      Item_HeartRock: -4368515580901015494
+      Item_Heat_Potion: -5417292004766682695
+      Item_Heels: 5080205916619997422
+      Item_Ice: -1819153984341775588
+      Item_ManaPotion: 8612599090800518271
+      Item_Money1: -288177993039552898
+      Item_Money2: -8393545431580001078
+      Item_Money3: 8079441880838785639
+      Item_MoonEmblem: -7623840414698082604
+      Item_Orb: 6629685620077825059
+      Item_Pepper: 588537886239838886
+      Item_Raimant: -7623840414698082604
+      Item_Ring: 4742978068330607305
+      Item_Rock: 4544885157340031993
+      Item_Roe: 7009537481667809750
+      Item_Scarf: -1384222218382276601
+      Item_Skull: 3846523890774562742
+      Item_SpeedBoots: 6649241809755062868
+      Item_Staff: 7513030418343285415
+      Item_StarEmblem: 7604988637252430048
+      Item_Steak: 701857987424451249
+      Item_Tortoise: 152623821204597742
+      Spell_ElecShot: 680971232134847931
+      Spell_FireShpt: -5780328680481788669
+      Spell_IceShot: 680971232134847931
+      Spell_Melee: 6770450193382083205
+      Spell_Projectile: -6511830294663249451
+      Spell_Special: 7438314934014844418
+      Sprite_Crystal: -6213746448083413945
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096bb39fb0e44594eb76f94fe3b49f1c, type: 3}
+  m_Name: Item_Heels
+  m_EditorClassIdentifier: 
+  ItemSprite: {fileID: 5080205916619997422, guid: 1d75c2334e15ef242b522ba976b9afb6, type: 3}
+  ItemName: Magic Heels
+  ItemDescription: Boosts Damage, Decreases speed
+  Price: 50
+  Properties:
+  - Type: 2
+    Amount: -0.2
+    Percentage: 0
+  - Type: 5
+    Amount: 0.5
+    Percentage: 0

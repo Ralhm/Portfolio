@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096bb39fb0e44594eb76f94fe3b49f1c, type: 3}
+  m_Name: Item_Earrings
+  m_EditorClassIdentifier: 
+  ItemSprite: {fileID: 1567257589581097276, guid: 1d75c2334e15ef242b522ba976b9afb6, type: 3}
+  ItemName: Earrings
+  ItemDescription: Slightly Increases Max Mana and Max Health
+  Price: 60
+  Properties:
+  - Type: 4
+    Amount: 2
+    Percentage: 0
+  - Type: 1
+    Amount: 2
+    Percentage: 0
