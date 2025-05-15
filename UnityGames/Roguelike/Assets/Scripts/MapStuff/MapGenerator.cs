@@ -53,19 +53,14 @@ public class MapGenerator : MonoBehaviour
     {
         //MapController.instance.LoadRoom("Start", new Vector2(0, 0));
 
-        TileGrid.AddGridSquare(new Vector2Int(0, 0), RoomType.Normal, RoomProperty.Start);
-        //TileGrid.MapRooms[0].IsOccuppied = true;
-        TileGrid.MapRoomsData[0].roomProperty = RoomProperty.Start;
-        TileGrid.MapRoomsData[0].roomType = RoomType.Normal;
         
-        TileGrid.MapRooms = GenerateMap(mapGenerationData);
-        TileGrid.CreateGrid();
+        TileGrid.MapRooms = GenerateMap(mapGenerationData); //Designate locations
+        TileGrid.CreateGrid(); //Designate room types
+        SpawnRooms(TileGrid.MapRoomsData); //Spawn the rooms
 
 
-
-
-        SpawnRooms(TileGrid.MapRoomsData);
         StartCoroutine(DelayRooms());
+
         //MapController.instance.RemoveUnconnectedDoors();
     }
     private void SetSeed(int state = 0)
@@ -86,6 +81,7 @@ public class MapGenerator : MonoBehaviour
     }
 
 
+    //Despite what this function is called, it basically just sends out crwalers to designate room coordinates
     public static List<Vector2Int> GenerateMap(MapData mapData)
     {
         List<MapCrawler> mapCrawlers = new List<MapCrawler>();
@@ -120,7 +116,7 @@ public class MapGenerator : MonoBehaviour
         
     }
 
-
+    //Actually spawn the rooms after their locations and types have been designated
     public void SpawnRooms(List<GridData> rooms)
     {
         Debug.Log("Beginning to spawn rooms!!!!");

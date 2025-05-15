@@ -51,6 +51,9 @@ public class Door : MonoBehaviour
 
 
     //This whole thing is kinda nasty BUT it allows for more easy room size adjustments in the future and prevents fuckiness with trace method
+    //The combined Purpose of the three below functions are to see if there is a room that this door connects to.
+    //If there is, store it.
+    //By setting the occuppied and next tile here, we can then allocate the corresponding doors
     public void CheckForRoom(GridData grid, RoomType type)
     {
 
@@ -109,14 +112,9 @@ public class Door : MonoBehaviour
 
     }
 
-    public bool FindNextRoom()
+    public void FindNextRoom()
     {
-        //if we've already found the connected door, cancel the search
-        if (ConnectedDoor != null)
-        {
-            return true;
-        }
-
+        //Set the tile belonging to the neighbor door
         NextTile = OccuppiedTile;
         switch (MainType)
         {
@@ -134,12 +132,6 @@ public class Door : MonoBehaviour
                 break;
         }
 
-        return true;
-    }
-
-
-    public void CheckIfConnected()
-    {
         if (!MapController.instance.DoesTileExist(NextTile))
         {
             Connected = true;
@@ -148,9 +140,11 @@ public class Door : MonoBehaviour
         else
         {
             CloseConnection();
-           
+
         }
+        return;
     }
+
 
     public void CloseConnection()
     {

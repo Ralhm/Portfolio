@@ -172,11 +172,22 @@ public class MapController : MonoBehaviour
 
 
         LoadedRooms.Add(room);
-        //room.RemoveUnconnectedDoors();
         //Debug.Log("I was added to the LoadedRooms!");
         GameManager.instance.IncrementNumRooms();
     }
 
+
+    //The door Process is as follows:
+    //Cycle through all the doors, allocate their occuppied tile
+    //Check if there is an occuppied tile next to the door
+    //After doing that check for all the doors,
+    //Then cycle through all the rooms, which then cycle through all there doors, to find their matching door.
+    //You could clean this up by replacing the lists with maps (Dictionaries in Unity)
+
+
+
+
+    //Cycle through All the rooms to set their door connections
     public void RemoveUnconnectedDoors()
     {
         //These have to be done sequentially, otherwise you might check for a nearby room whose doors haven't been set yet
@@ -185,11 +196,26 @@ public class MapController : MonoBehaviour
             LoadedRooms[i].CheckForNearbyRooms();    
         }
 
+        //For each room, set their door connections
         for (int i = 0; i < LoadedRooms.Count; i++)
         {
             LoadedRooms[i].SetDoorConnections();
         }
 
+    }
+
+    //The problem here is that we cycle through every room, which then cycles through every door in every room
+    //We can clean this up with Dictionarys
+    public void FindDoor(Door door)
+    {
+        for (int i = 0; i < LoadedRooms.Count; i++)
+        {
+            //Find the room with the corresponding NextTile that the passed in door has
+            if (LoadedRooms[i].HasTile(door))
+            {
+                break;
+            }
+        }
     }
 
     public void SetKeyRoom()
@@ -219,16 +245,8 @@ public class MapController : MonoBehaviour
     }
 
 
-    public void FindDoor(Door door)
-    {
-        for (int i = 0; i < LoadedRooms.Count; i++)
-        {
-            if (LoadedRooms[i].HasTile(door))
-            {                  
-                break;
-            }
-        }
-    }
+
+
 
     public bool DoesRoomExist(Vector2 roomPos)
     {

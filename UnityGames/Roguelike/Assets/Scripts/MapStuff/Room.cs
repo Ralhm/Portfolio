@@ -115,7 +115,7 @@ public class Room : MonoBehaviour
         for (int i = 0; i < Doors.Count; i++)
         {
             Doors[i].CheckForRoom(roomInfo, Type);
-            Doors[i].CheckIfConnected();
+            //Doors[i].CheckIfConnected();
         }
 
     }
@@ -124,7 +124,16 @@ public class Room : MonoBehaviour
     {
         for (int i = 0; i < Doors.Count; i++)
         {
-            if (Doors[i].Connected)
+
+            //if we've already found the connected door, cancel the search
+            if (Doors[i].ConnectedDoor != null)
+            {
+                print("Already Connected!");
+                continue;
+            }
+
+            //If this door has a connection
+            if (Doors[i].Connected) 
             {
                 MapController.instance.FindDoor(Doors[i]);
             }
@@ -138,9 +147,10 @@ public class Room : MonoBehaviour
 
         for (int i = 0; i < Doors.Count; i++)
         {
+            //Find the door in the room whose OccuppiedTile matches the door paremeters NextTile
             if (door.NextTile == Doors[i].OccuppiedTile)
             {
-                if (CheckConnectedDoor(door, Doors[i]))
+                if (CheckConnectedDoor(door, Doors[i])) //Make sure the door is facing the opposite direction, so only parallel doors are matched
                 {
                     SetConnectedDoor(door, Doors[i]);
                     return true;

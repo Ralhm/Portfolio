@@ -134,6 +134,7 @@ MonoBehaviour:
   HealthDropChance: 5
   traceDistance: 0
   traceRadius: 0
+  traceOffset: {x: 0, y: 0}
   Weakness: 1
   Resistance: 3
   Mask:
@@ -148,7 +149,7 @@ MonoBehaviour:
   RB: {fileID: 0}
   Anim: {fileID: 0}
   MoveTowardsPlayer: 1
-  MoveForce: 6
+  MoveForce: 10
 --- !u!61 &8191910353129790411
 BoxCollider2D:
   m_ObjectHideFlags: 0

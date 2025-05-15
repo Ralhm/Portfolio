@@ -66,8 +66,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1680099}
-  m_Radius: 0.68653804
+  m_Offset: {x: 0.00033903122, y: -0.29740083}
+  m_Radius: 0.03
 --- !u!1 &3690594595243335683
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +201,8 @@ MonoBehaviour:
   MoneyDropChance: 20
   HealthDropChance: 3
   traceDistance: 1
-  traceRadius: 0.5
+  traceRadius: 0.62
+  traceOffset: {x: 0, y: -0.3}
   Weakness: 2
   Resistance: 0
   Mask:
@@ -280,7 +281,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:

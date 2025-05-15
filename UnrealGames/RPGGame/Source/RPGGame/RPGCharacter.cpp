@@ -12,13 +12,17 @@
 #include "AC_Buff.h"
 
 #include "Blueprint/WidgetBlueprintLibrary.h"
-#include "EnumContainer.h"
-#include "Item_ConsumableAsset.h"
 
 #include "Components/WidgetComponent.h"
 #include "Components/Widget.h"
 
+#include "EnumContainer.h"
+#include "Item_ConsumableAsset.h"
+
+
 #include "Kismet/GameplayStatics.h"
+
+#include "Materials/MaterialInstanceDynamic.h"
 
 #include "ViewPawn.h"
 
@@ -59,10 +63,27 @@ void ARPGCharacter::BeginPlay()
 void ARPGCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//SelectArrow->SetWorldRotation(UKismetMathLibrary::MakeRotFromX(PawnController->GetActorLocation() - GetActorLocation()));
+}
+
+void ARPGCharacter::EyeChange(int val) {
+	if (!Eyes) {
+		
+		Eyes = GetMesh()->CreateDynamicMaterialInstance(EyesIndex, GetMesh()->GetMaterial(6));
+	}
+
+	Eyes->SetScalarParameterValue("FaceOffset", val);
 
 }
 
 
+void ARPGCharacter::MouthChange(int val) {
+	if (!Mouth) {
+
+		Mouth = GetMesh()->CreateDynamicMaterialInstance(MouthIndex, GetMesh()->GetMaterial(7));
+	}
+	Mouth->SetScalarParameterValue("MouthOffset", val);
+}
 
 void ARPGCharacter::LoseHealth(int Amount) {
 	HP -= Amount;
@@ -78,6 +99,8 @@ void ARPGCharacter::LoseHealth(int Amount) {
 	//Enter tired state
 	if (HealthPercent <= 0.3f) {
 		IsLowOnHealth = true;
+		EyeChange(PainEyesIndex);
+		MouthChange(PainMouthIndex);
 	}
 }
 
@@ -98,9 +121,15 @@ void ARPGCharacter::RestoreHealth(int Amount) {
 	HealthPercent = HP / MaxHealth;
 
 	//Enter Normal state
-	if (HealthPercent > 0.3f) {
-		IsLowOnHealth = false;
+
+	if (IsLowOnHealth) {
+		if (HealthPercent > 0.3f) {
+			IsLowOnHealth = false;
+			EyeChange(0);
+			MouthChange(0);
+		}
 	}
+
 }
 
 void ARPGCharacter::RestoreSP(int Amount) {
@@ -133,15 +162,20 @@ bool ARPGCharacter::MeetsRequirement(int SkillIndex) {
 }
 
 void ARPGCharacter::Die() {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Magenta, "Dying!");
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Magenta, "Dying!");
 	SetCurrentStatus(Dead);
+	QueuedAction = NoAction;
+	BuffComponent->RemoveAllBuffs();
+	BuffComponent->RemoveAllDeBuffs();
+
 }
 
 
 
 
 void ARPGCharacter::AttackTarget(ARPGCharacter* Target) {
-	if (Target->AttemptDodge(CalculateAccuracy())) {
+	if (Target->AttemptDodge(CalculateAccuracy())) {		
+
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "Target Dodged!");
 	}
 	else {
@@ -156,6 +190,8 @@ void ARPGCharacter::SetStoredTarget(ARPGCharacter* Target) {
 
 void ARPGCharacter::SetStoredTargetMultiple(TArray<ARPGCharacter*> *Targets) {
 	StoredTargetMultiple = Targets;
+	
+
 }
 
 
@@ -183,6 +219,7 @@ void ARPGCharacter::SetQueuedItem(UItem_ConsumableAsset* Item) {
 
 void ARPGCharacter::DisplayTargetArrow() {
 	SelectArrow->SetHiddenInGame(false);
+
 	IsSelected = true;
 }
 
@@ -231,7 +268,7 @@ bool ARPGCharacter::CheckForAilments() {
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Magenta, "NO ACTION SET!");
 		return false;
 	}
-	else if (GetCurrentStatus() == Dead) {
+	else if (IsDead()) {
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "I'M DEAD!");
 		return false;
 	}
@@ -259,6 +296,7 @@ bool ARPGCharacter::CheckForAilments() {
 }
 
 void ARPGCharacter::BeginAction() {
+
 
 }
 
@@ -343,6 +381,7 @@ void ARPGCharacter::BeginAnimationEmote(EAnimType Type) {
 	if (Type == SearchByName) {
 		for (i = 0; i < EmoteAnims.Num(); i++) {
 			if (SkillComponent->QueuedSkill->SkillName == EmoteAnims[i].MontageName) {
+
 				break;
 			}
 		}
@@ -371,24 +410,20 @@ void ARPGCharacter::EndDamage() {
 
 
 void ARPGCharacter::EndAction() {
-
-
 	GetWorld()->GetTimerManager().ClearTimer(ActionHandle);
+	ARPGGameGameMode* GameMode = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
+
+	//GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, GetName());
+	//GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, "Ending Action!");
 
 
-	if (!NextCharacterToAct) {
-		Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->StartNextTurn();
-		return;
-	}
+	GameMode->SetNextCharacterToAct(NextCharacterToAct);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Executing Next Action!");
-
-	NextCharacterToAct->BeginAction();
 	NextCharacterToAct = nullptr;
 	StoredTarget = nullptr;
 	StoredTargetMultiple = nullptr;
 
-	//Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->NextAction();
+
 }
 
 
@@ -414,7 +449,7 @@ void ARPGCharacter::EndTurn() {
 
 
 
-	if (GetCurrentStatus() != Normal || GetCurrentStatus() != Dead) {
+	if (GetCurrentStatus() != Normal || !IsDead()) {
 		StatusComponent->AttemptRecoverAilment();
 	}
 
@@ -424,7 +459,7 @@ void ARPGCharacter::EndTurn() {
 
 void ARPGCharacter::CheckNewEnemyTarget() { //Check for if the stored target has died, and we need to target a random new enemy
 	if (StoredTarget) {
-		if (StoredTarget->GetCurrentStatus() == Dead) {
+		if (StoredTarget->IsDead()) {
 			StoredTarget = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->GetNewEnemyTarget();
 		}
 	}
@@ -434,7 +469,7 @@ void ARPGCharacter::CheckNewEnemyTarget() { //Check for if the stored target has
 
 void ARPGCharacter::CheckNewPlayerTarget() {
 	if (StoredTarget) {
-		if (StoredTarget->GetCurrentStatus() == Dead) {
+		if (StoredTarget->IsDead()) {
 			StoredTarget = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->GetNewAllyTarget();
 		}
 	}
@@ -449,10 +484,10 @@ void ARPGCharacter::ChooseTarget(TArray<ARPGCharacter*> Targets) {
 	int Rand = FMath::RandRange(0, Targets.Num() - 1);
 
 
-	if (Targets[Rand]->GetCurrentStatus() == Dead) { //Account for if target is dead
+	if (Targets[Rand]->IsDead()) { //Account for if target is dead
 		while (true) {
 			Rand = FMath::RandRange(0, Targets.Num() - 1);
-			if (Targets[Rand]->GetCurrentStatus() != Dead) {
+			if (!Targets[Rand]->IsDead()) {
 				break;
 			}
 		}
@@ -460,6 +495,10 @@ void ARPGCharacter::ChooseTarget(TArray<ARPGCharacter*> Targets) {
 
 	SetStoredTarget(Targets[Rand]);
 
+}
+
+void ARPGCharacter::LookAtTarget() {
+	SetActorRotation((StoredTarget->GetActorLocation() - GetActorLocation()).Rotation());
 }
 
 void ARPGCharacter::ExecuteAction() {
@@ -594,6 +633,11 @@ bool ARPGCharacter::AttemptDodge(float AttackerAccuracy) {
 	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Emerald, FString::Printf(TEXT("Final Calculated Chance To Hit: %f"), AttackerAccuracy));
 
 	if (DodgeChance > AttackerAccuracy) {
+		UAnimInstance* instance = GetMesh()->GetAnimInstance();
+
+		if (DodgeMontage) {
+			GetMesh()->GetAnimInstance()->Montage_Play(DodgeMontage);
+		}
 		return true;
 	}
 
@@ -631,7 +675,7 @@ void ARPGCharacter::TakeDamage(int Damage) {
 
 	LoseHealth(Damage);
 
-	if (GetCurrentStatus() != Dead) {
+	if (IsDead()) {
 		GetWorld()->GetTimerManager().SetTimer(DamageHandle, this, &ARPGCharacter::EndDamage, MontageLength);
 	}
 	
@@ -639,9 +683,8 @@ void ARPGCharacter::TakeDamage(int Damage) {
 
 }
 
-void ARPGCharacter::GetBuff(EBuffType Type) {
-	
-}
+
+
 
 void ARPGCharacter::RestoreStatus() {
 	SetCurrentStatus(Normal);
@@ -670,6 +713,9 @@ float ARPGCharacter::GetElecRes() {
 	return ElecRes;
 }
 
+bool ARPGCharacter::IsDead() {
+	return GetCurrentStatus() == Dead;
+}
 
 TEnumAsByte<FStatus> ARPGCharacter::GetCurrentStatus() {
 	return StatusComponent->CurrentStatus;

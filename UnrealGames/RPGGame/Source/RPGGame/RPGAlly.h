@@ -29,6 +29,8 @@ public:
 
 	virtual void Revive(int Amount) override;
 
+	virtual void LoseHealth(int Amount);
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int CurrentDrawRate;
 
@@ -40,6 +42,8 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int DrawRateMax;
+
+
 
 	UFUNCTION()
 	void SetDrawRate(int min, int max);

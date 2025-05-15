@@ -18,6 +18,10 @@ public:
 
 	virtual void Die() override;
 
+	virtual void BeginPlay() override;
+
+
+
 	UFUNCTION()
 	void ChooseAction();
 

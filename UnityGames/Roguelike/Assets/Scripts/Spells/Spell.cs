@@ -61,7 +61,7 @@ public class Spell : ItemData
     }
     public virtual void Cast()
     {
-        AudioManager.Instance.PlaySpellSound(SFX);
+        
         player.LoseMana(ManaCost);
         player.IncreaseHeat(HeatAmount);
     }

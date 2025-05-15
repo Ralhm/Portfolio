@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   Speed: 5
-  MaxSpeed: 25
+  MaxSpeed: 35
   Acceleration: 20
   ContactDamage: 1
   MoneyDropChance: 20
@@ -216,10 +216,9 @@ MonoBehaviour:
   bulletClass: {fileID: 7747328977356743233, guid: bec1128eab6192f44a911d5dd688f407, type: 3}
   RB: {fileID: 0}
   Anim: {fileID: 0}
-  Pool: {fileID: 0}
-  FleeDistance: 4.5
+  FleeDistance: 8
   ShootRate: 2
-  WallForce: 20
+  WallForce: 25
 --- !u!61 &1468852470633812000
 BoxCollider2D:
   m_ObjectHideFlags: 0

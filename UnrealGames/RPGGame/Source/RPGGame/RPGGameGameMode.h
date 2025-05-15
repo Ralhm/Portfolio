@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "EnumContainer.h"
 #include "RPGGameGameMode.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndTurn);
+
 
 UENUM(BlueprintType)
 enum EBattleStatus {
@@ -19,7 +21,8 @@ enum EBattleStatus {
 	Execute_Turn UMETA(DisplayName = "Execute_Turn"),
 	Enemy_Select_Multi UMETA(DisplayName = "Enemy_Select_Multi"),
 	Player_Select_Multi UMETA(DisplayName = "Player_Select_Multi"),
-	Confirmation UMETA(DisplayName = "Confirmation")
+	Confirmation UMETA(DisplayName = "Confirmation"),
+	CharacterActing UMETA(DisplayName = "CharacterActing")
 
 
 
@@ -40,6 +43,10 @@ public:
 	virtual void BeginPlay() override;
 
 
+	//DUMMY FUNCTION, NOT FINAL!!!!
+	UFUNCTION(BlueprintCallable)
+	void SetArrowsLookAtCamera();
+
 	//The widget class we will use as our menu when the game starts
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class TSubclassOf<UUserWidget> StartingWidgetClass;
@@ -47,6 +54,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UInventoryComponent* InventoryComponent;
 
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<AActor*> OverheadViewPoints;
 
 	//The widget instance we are using as our game menu
 	UPROPERTY()
@@ -69,7 +80,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class TSubclassOf<UUserWidget> SkillButton;
-
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
@@ -103,6 +113,12 @@ public:
 	UPROPERTY()
 	AActor* SpawnManager;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class ARPGCharacter* NextCharacterToAct;
+
+	//If a character died, add a little delay to the next 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	float DeathDelayTime;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int TargetSum;
@@ -205,6 +221,9 @@ public:
 
 
 	UFUNCTION()
+	void SetDeathDelayTime(float duration);
+
+	UFUNCTION()
 	void EnemyTurn();
 
 
@@ -214,6 +233,18 @@ public:
 	UFUNCTION()
 	void StartNextTurn();
 
+	UFUNCTION()
+	void NextTurnDelay();
+
+	UFUNCTION()
+	void BeginNextCharacterAction();
+
+
+	UFUNCTION()
+	void TriggerEndOfCameraMovement();
+
+	UFUNCTION()
+	void SetNextCharacterToAct(class ARPGCharacter* NextCharacter);
 
 	UFUNCTION()
 	void AskConfirmTurn();
@@ -260,6 +291,22 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetQueuedItem(int index);
+
+	UFUNCTION(BlueprintCallable)
+	void DisplayTargets(bool IsMultiTarget, bool IsOffensive);
+
+	//Call this function when actions like damage or item vfx end
+	UFUNCTION(BlueprintCallable)
+	void DelayTilNextAction();
+
+
+	void TellCameraWhatToDo(class ARPGCharacter* Character, ECamMovementType Type, bool Snap = true, bool ZoomOut = false, bool Delay = false);
+
+	UFUNCTION()
+	AActor* GetRandomOverheadPoint();
+
+	
+	FORCEINLINE void MoveToRandomOverheadPoint();
 
 
 	FORCEINLINE void RemoveConsumable(class UItem_ConsumableAsset* ItemRef);

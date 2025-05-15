@@ -37,8 +37,11 @@
 // jump out of dash that carries momentum
 // for queueing up moves when you add grapples, just check if you're in a grapple state or not and then decide which type of the queued action to execute
 // 
-// make an environment to run around in and showcase combat/movement
 // Make tug a montage?
+// 
+// 
+// --Electric Ball Mode
+// Landing on a slop should not immediately send you in the direction of the slope (Like on that one curve)
 // 
 // when grappling, prioritize enemies that are closer?
 //https://x.com/log64dev/status/1805094711142863203
@@ -59,6 +62,8 @@ APlayerCharacter::APlayerCharacter()
 
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraAttachmentArm"));
 	SpringArm->SetupAttachment(GetCapsuleComponent());
+
+
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
@@ -142,6 +147,8 @@ void APlayerCharacter::BeginPlay()
 	ManaPercent = Mana / MaxMana;
 	DashBoost = false;
 
+
+	ActorsToIgnore.Add(this);
 }
 
 // Called every frame
@@ -195,6 +202,11 @@ void APlayerCharacter::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherAct
 	//GEngine->AddOnScreenDebugMessage(-1, 7.0f, FColor::Yellow, "Hit Enemy!");
 
 }
+
+
+
+
+
 
 void APlayerCharacter::StartJump() {
 	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, FString::Printf(TEXT("Current JumpCount: %d"), JumpCurrentCount));
@@ -364,9 +376,16 @@ void APlayerCharacter::SkidTimer() {
 
 void APlayerCharacter::IceAction() {
 	if ((CurrentState == Electric || CurrentState == Fire) && !ElecRecoilActive) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Cyan, "Queueing Ice!");
-		QueueAction(Ice);
-		return;
+		if (InBallMode) {
+			ElecBallModeEnd();
+			IceDash();
+		}
+		else {
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Cyan, "Queueing Ice!");
+			QueueAction(Ice);
+			return;
+		}
+
 	}
 	else if (Tugging) {
 		QueueAction(Ice);
@@ -386,6 +405,20 @@ void APlayerCharacter::IceAction() {
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "Can't Ice Attack!");
 	}
 }
+
+void APlayerCharacter::IceSlidePhysics() {
+	//Don't apply slide physics if we're going UP
+	//This Should allow halfpipes and curves to work for Ball Mode
+	GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Purple, FString::Printf(TEXT("Up Dot Product: %f"), FVector::DotProduct(GetActorUpVector(), FVector::UpVector)));
+	GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Green, FString::Printf(TEXT("Forward Dot Product: %f"), FVector::DotProduct(GetActorForwardVector(), FVector::UpVector)));
+
+	GetCharacterMovement()->AddForce(CalculateFloorInfluence(GetCharacterMovement()->CurrentFloor.HitResult.ImpactNormal) * IceSlideForce);
+
+	//We should only set pitch or yaw or whatever here
+
+	//SetActorRotation(GetCharacterMovement()->Velocity.GetSafeNormal().Rotation());
+}
+
 
 void APlayerCharacter::IceDash() {
 	CurrentState = Ice;
@@ -531,11 +564,6 @@ void APlayerCharacter::IceGrappleTimerHorizontal() {
 
 	}
 
-
-
-
-
-
 }
 
 void APlayerCharacter::IceGrappleTimerVertical() {
@@ -608,6 +636,10 @@ void APlayerCharacter::IceFrictionTimer() {
 #pragma region Fire
 
 void APlayerCharacter::FireAction() {
+	if (InBallMode) {
+		ElecBallModeEnd();
+		FireBounce();
+	}
 	if ((CurrentState == Electric) && !ElecRecoilActive) {
 		QueueAction(Fire);
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "Queueing Fire!");
@@ -914,10 +946,17 @@ void APlayerCharacter::FireDelayTimer() {
 #pragma region Elec
 
 void APlayerCharacter::ElecAction() {
+	if (InBallMode) {
+		ElecBallModeEnd();
+		return;
+	}
+
 	if (CurrentState == GrapplingEnemy && IsLookTargetEnemy) {
 		ElecGrapple();
 		return;
 	}
+
+
 
 	if (CanElectric) {
 		ElecDash();
@@ -927,16 +966,262 @@ void APlayerCharacter::ElecAction() {
 
 }
 
+const FVector APlayerCharacter::CalculateFloorInfluence(const FVector& FloorNormal) {
+	//Use VectorUp here, NOT GetActorUpVector
+	//This adjusts direction
+	FVector NewUpDir = FVector::CrossProduct(FloorNormal, FVector::CrossProduct(FloorNormal, FVector::UpVector)).GetSafeNormal();
+	
+	//This adjusts scale
+	NewUpDir *= (1.0 - FVector::DotProduct(FloorNormal, FVector::UpVector));
+
+
+	return NewUpDir;
+}
+
+
+const FVector APlayerCharacter::CalculateElecFloorInfluence(const FVector& FloorNormal) {
+	//Use VectorUp here, NOT GetActorUpVector
+	//This adjusts direction
+	FVector NewUpDir = FVector::CrossProduct(FloorNormal, FVector::CrossProduct(FloorNormal, FVector::UpVector)).GetSafeNormal();
+
+	//This adjusts scale
+	float Scale = (1.0 - FVector::DotProduct(FloorNormal, FVector::UpVector));
+	NewUpDir *= Scale * Scale;
+	
+
+
+	return NewUpDir;
+}
+
+void APlayerCharacter::ElecSlidePhysics() {
+	//Don't apply slide physics if we're going UP
+	//This Should allow halfpipes and curves to work for Ball Mode
+	//GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Purple, FString::Printf(TEXT("Up Dot Product: %f"), FVector::DotProduct(GetActorUpVector(), FVector::UpVector)));
+
+	//Consider making this static to save space
+	//In order for the halfpipe to work, we'll need to NOT Set Rotation in the direction of the slide
+	//Instead, keep rotation set to velocity
+	FVector SlideDir = CalculateElecFloorInfluence(BallModeHit.ImpactNormal);
+	if (SlideDir.IsNearlyZero()) {
+		return;
+	}
+	//GetCharacterMovement()->AddForce(CalculateFloorInfluence(SlideDir * ElecSlideForce);
+
+	//GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Green, FString::Printf(TEXT("UpDown Dot Product: %f"), FVector::DotProduct(GetActorUpVector(), FVector::DownVector)));
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (SlideDir * 1000.0f), FColor::Magenta, false, 0.1f, 0, 20.0f);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (GetActorForwardVector() * 1000.0f), FColor::Green, false, 0.1f, 0, 20.0f);
+
+	//Try scaling slideforce with dot product
+
+	//Try scaling down the floor influence for steep slopes
+	
+	//Only apply slide force if we're NOT upside down in loop/curve
+	if (FVector::DotProduct(GetActorUpVector(), FVector::DownVector) < MinSlideAngle) {
+		if (FVector::DotProduct(GetActorForwardVector(), SlideDir) < MinElecAngle) { //Add decreased Slide Force if Sliding in opposite direction of velocity
+			
+			//Try making this scale inversely based on speed
+			//So the slower you're going, the greater the effect
+			GetCharacterMovement()->AddForce(SlideDir * ElecSlideForce * ReducedSlideFactor);
+
+			GEngine->AddOnScreenDebugMessage(-1, 0.01f, FColor::Yellow, "Applying REDUCED Slide Physics!");
+		}
+		else { //Otherwise use normal slideforce
+			GetCharacterMovement()->AddForce(SlideDir * ElecSlideForce);
+			GEngine->AddOnScreenDebugMessage(-1, 0.01f, FColor::Green, "Applying NORMAL Slide Physics!");
+		}
+
+
+
+	}
+	else { 
+		GEngine->AddOnScreenDebugMessage(-1, 0.01f, FColor::Red, "Applying NO Slide Physics!");
+
+		//GetCharacterMovement()->AddImpulse(SlideDir * ElecSlideForce);
+	}
+
+
+
+}
+
+//While in Ball Mode, you shouldn't be able to accelerate very much, but you should still be able to turn tightly
+//While in Ball Mode, Interpolate velocity to hold direction?
+void APlayerCharacter::ElecBallMode() {
+
+
+	//-----I advise AGAINST using a sphere trace, it causes some occasionally fucky collisions/rotations-----
+	UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(),
+		(GetActorLocation() - (GetActorUpVector() * CentripetalDistanceOffset)),
+		(GetActorLocation() - (GetActorUpVector() * CentripetalDistanceOffset)) - (GetActorUpVector() * CentripetalDistanceCheck),
+		ObjectTypes, false, ActorsToIgnore, EDrawDebugTrace::ForDuration,
+		BallModeHit, true, FLinearColor::Red, FLinearColor::Red, 1.0f);
+
+	
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (BallModeHit.ImpactNormal * 1000.0f), FColor::Black, false, 10.1f, 0, 20.0f);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() - (GetActorUpVector() * CentripetalDistanceCheck), FColor::Blue, false, 1.1f, 0, 10.0f);
+
+
+	
+	//Debug if statement, should remove later
+
+
+	if (ApplyElecGravity) {
+		GetCharacterMovement()->AddForce(FVector::DownVector * ElecGravity);	
+	}
+
+
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (GetCharacterMovement()->Velocity), FColor::Green, false, 10.1f, 0, 20.0f);
+	if (BallModeHit.bBlockingHit) {
+		bool OnFlatSurface = FVector::DotProduct(BallModeHit.ImpactNormal, FVector::UpVector) > 0.98f;
+		if (AlreadyInAir) {
+			AlreadyInAir = false;
+
+			//Convert current velocity into new forward velocity only if on curved surface
+			if (!OnFlatSurface) {
+				GetCharacterMovement()->Velocity = GetCharacterMovement()->Velocity.Size() * CalculateElecFloorInfluence(BallModeHit.ImpactNormal).GetSafeNormal();
+			}
+			else {
+				//End if we're about to land on a flat surface
+				if (FVector::DotProduct(GetCharacterMovement()->Velocity.GetSafeNormal(), FVector::DownVector) > 0.95f) {
+					GEngine->AddOnScreenDebugMessage(-1, 5.1f, FColor::White, "LANDED WHILE GOING STRAIGHT DOWN!");
+					ElecBallModeEnd();
+					return;
+				}
+				GetCharacterMovement()->Velocity = FVector(GetCharacterMovement()->Velocity.X, GetCharacterMovement()->Velocity.Y, 0);
+				
+			}
+		}
+
+		//Only cancel out if we're less than min velocity, on the ground, and on a flat surface
+		if (GetCharacterMovement()->Velocity.Size() < MinElecVelocity && OnFlatSurface) { //Exit Ball Mode
+			ElecBallModeEnd();
+			return;
+
+		}
+
+		//Only apply slide physics in not on a flat surface
+		if (!OnFlatSurface) {
+			ElecSlidePhysics();
+		}
+
+		if (ApplyElecDrag) {
+			GetCharacterMovement()->AddForce(-GetActorForwardVector() * GetCharacterMovement()->Velocity.SizeSquared() * ElecGroundDragForce);
+
+		}
+
+		if (ApplyElecCentripetal) {
+			FVector CentripetalForce = -BallModeHit.ImpactNormal * GetCharacterMovement()->Velocity.Size() * GetCharacterMovement()->Velocity.Size() * CentripetalForceScale;
+			GetCharacterMovement()->AddForce(CentripetalForce);
+			//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (CentripetalForce.GetSafeNormal() * 100.0f), FColor::White, false, 1.1f, 0, 20.0f);
+		}
+		//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (Cross * 100.0f), FColor::White, false, 1.1f, 0, 20.0f);
+
+
+		GetCharacterMovement()->AddForce(GetActorForwardVector() * ElecForwardForce);
+
+
+		//GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::White, "Normal Rotation!");
+		SetActorRotation(
+			UKismetMathLibrary::MakeRotationFromAxes(
+				GetCharacterMovement()->Velocity.GetSafeNormal(),
+				FVector::CrossProduct(BallModeHit.ImpactNormal, GetCharacterMovement()->Velocity.GetSafeNormal()),
+				BallModeHit.ImpactNormal));
+
+	
+
+	
+	}
+	else { 
+		AlreadyInAir = true;
+
+		if (ApplyElecDrag) {
+
+			//Prevent drag from actively reversing your direction in midair
+			if (FVector(GetCharacterMovement()->Velocity.X, GetCharacterMovement()->Velocity.Y, 0).Size() > MinDragSpeed) {
+				GetCharacterMovement()->AddForce(-GetActorForwardVector() * GetCharacterMovement()->Velocity.SizeSquared() * ElecAirDragForce);
+			}
+
+		}
+
+		//Edge case if we fall down from top of loop
+		if (FVector::DotProduct(FVector::DownVector, GetActorUpVector()) > 0.2f) {
+			GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Magenta, "NORMALIZING ROTATION!");
+			SetActorRotation(FRotator(0, GetActorRotation().Yaw, 0));
+			return;
+		}
+		else {
+			GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Red, "Currently in the Air!");
+			SetActorRotation(
+				UKismetMathLibrary::MakeRotationFromAxes(
+					FVector(GetCharacterMovement()->Velocity.X, GetCharacterMovement()->Velocity.Y, 0),
+					GetActorRightVector(),
+					FVector::UpVector));
+		}
+
+
+
+	}
+
+}
+
+void APlayerCharacter::ElecBallModeEnd() {
+
+	//Set movement mode to ground if floor trace hits something, else go in air
+
+	UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), GetActorLocation(), GetActorLocation() - (GetActorUpVector() * CentripetalDistanceCheck), ObjectTypes, false, ActorsToIgnore, EDrawDebugTrace::None, BallModeHit, true, FLinearColor::Red, FLinearColor::Red, 10.0f);
+	if (BallModeHit.bBlockingHit) {
+		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking);
+		CurrentState = Normal;
+	}
+	else {
+		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Falling);
+		CurrentState = InAir;
+	}
+
+
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetVelocity(), FColor::Red, false, 10.1f, 0, 20.0f);
+	ResetPhysics();
+	SetActorRotation(FRotator(0, GetActorRotation().Yaw, GetActorRotation().Roll));
+	CanElectric = true;
+	InBallMode = false;
+	GetCharacterMovement()->SetWalkableFloorAngle(60);
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Magenta, "Exited Ball Mode!");
+}
+
+void APlayerCharacter::ElecBallEnter() {
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Emerald, "Entering Ball Mode!");
+	
+	if (CurrentState == Ice) {
+		IceEnd();
+	}
+
+	ElecForwardVelocity = GetCharacterMovement()->Velocity;
+	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Flying);
+
+
+	GetCharacterMovement()->GravityScale = 0.0f;
+	GetCharacterMovement()->BrakingDecelerationFalling = 0;
+
+	GetCharacterMovement()->AirControl = ElecAirControl;
+	GetCharacterMovement()->FallingLateralFriction = ElecFallingLateralFriction;
+	GetCharacterMovement()->GroundFriction = ElecFriction;
+	GetCharacterMovement()->BrakingDecelerationWalking = 0;
+	InBallMode = true;
+
+}
+
 void APlayerCharacter::ElecDash() {
 	StopJump();
 	GetWorldTimerManager().ClearTimer(TimeManager.IceHandle);
-	if (GetCharacterMovement()->IsFalling()) {
+	if (GetCharacterMovement()->IsFalling()) { //Jolt downwards
 		LaunchCharacter(-GetActorUpVector() * ElectricDescentPower, true, true);
-
+		GetCharacterMovement()->SetWalkableFloorAngle(90);
 	}
-	else {
-		GetCharacterMovement()->GravityScale = ElecGravity;
-		GetCharacterMovement()->BrakingDecelerationFalling = ElecBrakingDecelerationFalling;
+	else if (!GetCharacterMovement()->IsFalling() && GetCharacterMovement()->Velocity.Size() > MinElecVelocity) { //Enter Ball Mode
+		ElecBallEnter();
+	}
+	else { //Jolt Upwards
+		GetCharacterMovement()->GravityScale = 0;
+		GetCharacterMovement()->BrakingDecelerationFalling = 0;
 		LaunchCharacter(GetActorUpVector() * ElectricAscentPower, true, true);
 		BeginCountDown("Elec");
 	}
@@ -963,7 +1248,7 @@ void APlayerCharacter::ElecGrapple() {
 	GetCharacterMovement()->GroundFriction = 0;
 	GetCharacterMovement()->BrakingDecelerationWalking = 0;
 	GetCharacterMovement()->GravityScale = 0;
-	GetCharacterMovement()->BrakingDecelerationFalling = ElecBrakingDecelerationFalling;
+	GetCharacterMovement()->BrakingDecelerationFalling = 0;
 	GetWorldTimerManager().SetTimer(TimeManager.ElecHandle, this, &APlayerCharacter::ElecGrappleEnd, ElecGrappleDuration);
 
 }
@@ -985,7 +1270,6 @@ void APlayerCharacter::ElecGrappleEnd() {
 
 void APlayerCharacter::ElecEnd() {
 	GetWorldTimerManager().ClearTimer(TimeManager.ElecHandle);
-
 	ResetPhysics();
 	CurrentState = InAir;
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "Elec ended in air!");
@@ -993,10 +1277,10 @@ void APlayerCharacter::ElecEnd() {
 	if (QueuedAction != Normal) {
 		ActivateQueuedAction();
 	}
-
+	GetCharacterMovement()->SetWalkableFloorAngle(60);
 }
 
-void APlayerCharacter::ElecEndGrounded() {
+void APlayerCharacter::ElecEndGrounded(const FHitResult& Hit) {
 	GetWorldTimerManager().ClearTimer(TimeManager.ElecHandle);
 
 
@@ -1008,12 +1292,21 @@ void APlayerCharacter::ElecEndGrounded() {
 	else if (QueuedAction == Ice) {
 		IceDash();
 	}
+	else if (FVector::DotProduct(Hit.ImpactNormal, GetActorUpVector()) < 0.95f) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, FString::Printf(TEXT("Current Velocity: %f"), GetCharacterMovement()->Velocity.Size()));
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, FString::Printf(TEXT("Dot Product: %f"), FVector::DotProduct(Hit.ImpactNormal, GetActorUpVector())));
+		DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetVelocity() * (500.0f), FColor::Magenta, false, 10.1f, 0, 20.0f);
+
+		ElecBallEnter();
+		return;
+	}
 	else {
 		GetWorldTimerManager().SetTimer(TimeManager.ElecHandle, this, &APlayerCharacter::ElecRecoilTimer, ElecRecoilTime);
 		ElecRecoilActive = true;
 
 	}
-
+	
+	GetCharacterMovement()->SetWalkableFloorAngle(60);
 }
 
 void APlayerCharacter::ElecRecoilTimer() {
@@ -1125,12 +1418,7 @@ void APlayerCharacter::CheckStillInGrappleRange() {
 }
 
 void APlayerCharacter::GrappleEnemy() {
-
-
 	if (CurrentLookTarget != nullptr) {
-
-		
-
 		if (CurrentState == Normal) {
 			StopJump();
 			GetWorldTimerManager().ClearTimer(TimeManager.IceHandle);
@@ -1200,52 +1488,10 @@ void APlayerCharacter::ResetJumpValues() {
 	CanDash = true;
 	JumpCurrentCount = 0;
 	DoubleJumped = false;
-
-
-
-
 }
 
 
 
-void APlayerCharacter::ResetAttackState() {
-
-}
-
-
-void APlayerCharacter::LoseHealth(float amount) {
-
-}
-
-
-void APlayerCharacter::LoseMana(float amount) {
-
-}
-
-
-void APlayerCharacter::RestoreHealth(float amount) {
-
-}
-
-
-void APlayerCharacter::RestoreMana(float amount) {
-
-}
-
-
-void APlayerCharacter::StartHealing() {
-
-}
-
-
-void APlayerCharacter::StopHealing() {
-
-}
-
-
-void APlayerCharacter::LandToJump() {
-
-}
 
 
 void APlayerCharacter::UpdateFace(FFaceAnimationState state, bool HealthType) {
@@ -1362,37 +1608,6 @@ void APlayerCharacter::BeginCountDown(FName Type) {
 
 }
 
-
-void APlayerCharacter::AdvanceAttackTimer() {
-
-}
-
-
-
-void APlayerCharacter::AdvanceInvincibilityTimer() {
-
-}
-
-
-
-void APlayerCharacter::AdvanceDashTimer() {
-
-}
-
-
-
-void APlayerCharacter::AdvanceBoostTimer() {
-
-}
-
-
-
-void APlayerCharacter::AdvanceHealTimer() {
-
-}
-
-
-
 void APlayerCharacter::CoyoteTimer() {
 	CoyoteBuffer = false;
 	GetWorldTimerManager().ClearTimer(TimeManager.CoyoteHandle);
@@ -1401,16 +1616,6 @@ void APlayerCharacter::CoyoteTimer() {
 	}
 
 	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "Coyote Time over!");
-}
-
-
-
-void APlayerCharacter::AdvanceFlightAccelTimer() {
-
-}
-
-void APlayerCharacter::ExitFlight() {
-
 }
 
 
@@ -1461,6 +1666,19 @@ void APlayerCharacter::OnMovementModeChanged(EMovementMode PrevMovementMode, uin
 		ResetJumpState();
 
 
+	}
+
+	if (InBallMode) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Black, "CHANGED STATE WHILE IN BALL MODE");
+	}
+	
+	if (!GetCharacterMovement()->IsFalling() && InBallMode) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Black, "LANDED WHILE IN BALL MODE");
+	}
+
+
+	if (GetCharacterMovement()->IsFalling() && InBallMode) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Black, "ENTERED FALLING STATE WHILE IN BALL MODE");
 	}
 
 	// Record jump force start time for proxies. Allows us to expire the jump even if not continually ticking down a timer.
@@ -1544,7 +1762,14 @@ void APlayerCharacter::NotifyJumpApex() {
 
 //reset some jump related stuff on landing
 void APlayerCharacter::Landed(const FHitResult& Hit) {
+
 	Super::Landed(Hit);
+
+	if (InBallMode) {
+
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Orange, "ENTERING LANDED IN BALL MODE");
+		return;
+	}
 
 	CanBuffer = false;
 	if (CurrentState == Flying) {
@@ -1561,15 +1786,18 @@ void APlayerCharacter::Landed(const FHitResult& Hit) {
 
 	}
 	else if (CurrentState == Electric) {
-		ElecEndGrounded();
+		if (InBallMode) {
+			GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Orange, "ALREADY IN BALL MODE");
+
+		}
+		CanIce = true;
+		ElecEndGrounded(Hit);
+		
 	}
 	else if (CurrentState != Bonk && CurrentState != Dive && CurrentState != Slide && CurrentState != Ice) {
 		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Landed");
 		CurrentState = Normal;
-
 		CanIce = true;
-		
-
 	}
 
 	if (IceGrappling) {
@@ -1607,3 +1835,85 @@ void APlayerCharacter::ResetJumpState() {
 
 #pragma endregion
 
+#pragma region defunctShit
+
+void APlayerCharacter::AdvanceAttackTimer() {
+
+}
+
+
+
+void APlayerCharacter::AdvanceInvincibilityTimer() {
+
+}
+
+
+
+void APlayerCharacter::AdvanceDashTimer() {
+
+}
+
+
+
+void APlayerCharacter::AdvanceBoostTimer() {
+
+}
+
+
+
+void APlayerCharacter::AdvanceHealTimer() {
+
+}
+
+void APlayerCharacter::ResetAttackState() {
+
+}
+
+
+void APlayerCharacter::LoseHealth(float amount) {
+
+}
+
+
+void APlayerCharacter::LoseMana(float amount) {
+
+}
+
+
+void APlayerCharacter::RestoreHealth(float amount) {
+
+}
+
+
+void APlayerCharacter::RestoreMana(float amount) {
+
+}
+
+
+void APlayerCharacter::StartHealing() {
+
+}
+
+
+void APlayerCharacter::StopHealing() {
+
+}
+
+
+void APlayerCharacter::LandToJump() {
+
+}
+
+
+
+
+
+void APlayerCharacter::AdvanceFlightAccelTimer() {
+
+}
+
+void APlayerCharacter::ExitFlight() {
+
+}
+
+#pragma endregion

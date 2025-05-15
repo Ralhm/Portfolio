@@ -162,6 +162,7 @@ void UAC_Buff::ApplyBuff(FBuffData Buff) {
 
 	if (Buffs.Num() == MaxBuffs) {
 		RemoveBuff(Buffs[0]);
+		
 	}
 
 	AddBuff(Buff);
@@ -270,6 +271,12 @@ void UAC_Buff::RegenerateSP() {
 	Owner->RestoreSP(Buff_RegenerateSP * Owner->MaxSP);
 }
 
+void UAC_Buff::RemoveAllBuffs() {
+	Buffs.Empty();
+}
+void UAC_Buff::RemoveAllDeBuffs() {
+	DeBuffs.Empty();
+}
 
 //Either we set all these values here and now on buff applications, 
 //or every time we calculate damage and whatnot, we cycle through our list of buffs and calculate there. no thanks

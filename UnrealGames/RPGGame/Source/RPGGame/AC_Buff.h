@@ -165,6 +165,9 @@ public:
 	void AddBuff(FBuffData Buff);
 	void AddDeBuff(FBuffData DeBuff);
 
+	void RemoveAllBuffs();
+	void RemoveAllDeBuffs();
+
 	void RemoveBuff(FBuffData Buff);
 	void RemoveDeBuff(FBuffData DeBuff);
 

@@ -69,6 +69,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSoftObjectPtr<UTexture> SkillIcon;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera");
+	TEnumAsByte<ECamMovementType> CamType = Shoulder;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera");
+	bool Snap = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera");
+	bool ZoomOut = false;
 
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	//class UAnimMontage* Animation;

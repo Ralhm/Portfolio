@@ -20,8 +20,6 @@ public class MapData : ScriptableObject
     public List<string> BossRooms;
 
 
-
-
     public string ChooseNormalRoom()
     {
         int rand = Random.Range(0, NormalRooms.Count);
@@ -63,23 +61,25 @@ public class Grid
     //Then pass that list into the LoadRooms functions
     public void CreateGrid()
     {
+
+
+        AddGridSquare(new Vector2Int(0, 0), RoomType.Normal, RoomProperty.Start); //Designate Start Room first
+        MapRoomsData[0].roomProperty = RoomProperty.Start;
+        MapRoomsData[0].roomType = RoomType.Normal;
+
         CreateBossRoom();
         CreateSpecialRoom(RoomProperty.Shop);
         CreateSpecialRoom(RoomProperty.Treasure);
         CreateSpecialRoom(RoomProperty.MagicShop);
   
-
         int rand = 0;
 
         for (int i = 0; i < MapRooms.Count; i++)
-        {
-            
+        {       
             if (!CheckIfRoomIsNotOccuppied(MapRooms[i])) {
                 continue;
-            }
-            
-            rand = Random.Range(0, 100);
-            
+            }            
+            rand = Random.Range(0, 100);            
             if (rand < 10)
             {
                 if (AttemptCreateBigRoom(MapRooms[i]))
@@ -87,29 +87,23 @@ public class Grid
                     continue;
                 }
             }
-            
-            
+                      
             if (rand > 10 && rand < 20)
             {
                 if (AttemptCreateLongRoom(MapRooms[i]))
                 {
                     continue;
                 }
-            }
-            
+            }          
             if (rand > 20 && rand < 30)
             {
                 if (AttemptCreateTallRoom(MapRooms[i]))
                 {
                     continue;
                 }
-            }
-            
+            }            
             AddGridSquare(MapRooms[i], RoomType.Normal);
         }
-
-
-
     }
 
     void SetRoomOccuppied(Vector2Int roomPos)

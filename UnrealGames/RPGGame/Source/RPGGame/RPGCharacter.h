@@ -95,6 +95,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TEnumAsByte<FAttribute> NormalAttackAttribute;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TEnumAsByte<ECamMovementType> NormalAttackCameraAngle = Shoulder;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool NormalAttackCameraZoom = false;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TEnumAsByte<FActionType> QueuedAction;
 
@@ -116,6 +123,9 @@ public:
 	UAnimMontage* DefenseMontage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	UAnimMontage* DodgeMontage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
 	UAnimMontage* ItemMontage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
@@ -124,8 +134,32 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
 	UAnimMontage* DeathMontage;
 
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Animation")
+	UMaterialInstanceDynamic* Eyes;
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Animation")
+	UMaterialInstanceDynamic* Mouth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	int EyesIndex;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	int MouthIndex;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	int PainEyesIndex;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	int PainMouthIndex;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int index;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int TurnIndex;
+
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool IsSelected;
@@ -155,7 +189,7 @@ public:
 	float MaxHealth;
 
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float HP;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -235,7 +269,7 @@ public:
 	virtual void TakeDamage(int Damage);
 
 
-	void LoseHealth(int Amount);
+	virtual void LoseHealth(int Amount);
 
 	void LoseSP(int Amount);
 
@@ -246,8 +280,6 @@ public:
 	UFUNCTION()
 	void RestoreStatus();
 
-	UFUNCTION()
-	void GetBuff(EBuffType Type);
 
 	UFUNCTION()
 	virtual void Revive(int Amount);
@@ -276,6 +308,10 @@ public:
 	FORCEINLINE float GetIceRes();
 	FORCEINLINE float GetElecRes();
 
+
+
+
+	void LookAtTarget();
 
 	void AttackTarget(ARPGCharacter* Target);
 
@@ -340,8 +376,18 @@ public:
 	UFUNCTION()
 	void ExecuteDefend();
 
+	UFUNCTION(BlueprintCallable)
+	bool IsDead();
 
-	UFUNCTION()
+
+	UFUNCTION(BlueprintCallable)
+	void EyeChange(int val);
+
+	UFUNCTION(BlueprintCallable)
+	void MouthChange(int val);
+
+
+	UFUNCTION(BlueprintCallable)
 	TEnumAsByte<FStatus> GetCurrentStatus();
 
 	UFUNCTION()
@@ -350,11 +396,11 @@ public:
 	UFUNCTION()
 	void AttemptInflictAilment(FStatus Status, int BaseChance);
 
-	FORCEINLINE void SetQueuedAction(FActionType type);
+	void SetQueuedAction(FActionType type);
 
-	FORCEINLINE void SetQueuedSkill(int SkillIndex);
+	void SetQueuedSkill(int SkillIndex);
 
-	FORCEINLINE void SetQueuedItem(class UItem_ConsumableAsset* Item);
+	void SetQueuedItem(class UItem_ConsumableAsset* Item);
 
 
 	FTimerHandle ActionHandle;

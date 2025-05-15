@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float HealthDropChance;
     public float traceDistance;
     public float traceRadius;
+    public Vector2 traceOffset;
     public Element Weakness;
     public Element Resistance;
     public LayerMask Mask;
@@ -36,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     protected BulletPool Pool;
     protected Player player;
-    protected Vector2 traceOffset;
+
     protected Collider2D collider;
 
 
@@ -195,7 +196,7 @@ public class Enemy : MonoBehaviour
 
         RaycastHit2D raycastHit = new RaycastHit2D();
         raycastHit = Physics2D.CircleCast(RB.position + traceOffset + Dir * 0.5f, traceRadius, Dir, traceDistance, Mask);
-        //Debug.DrawRay(RB.position + traceOffset + Dir * 0.5f, Dir * traceDistance, Color.green);
+        Debug.DrawRay(RB.position + traceOffset + Dir * 0.5f, Dir * traceDistance, Color.green);
 
 
         return raycastHit;

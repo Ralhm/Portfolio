@@ -97,13 +97,11 @@ enum ETargetType {
 UENUM(BlueprintType)
 enum EAnimType {
 	SearchByName UMETA(DisplayName = "SearchByName"),
-	Emote_Item UMETA(DisplayName = "Emote_Item"),
-	Emote_Defend UMETA(DisplayName = "Emote_Defend"),
-	Emote_Shock UMETA(DisplayName = "Emote_Shock"),
-	Emote_Idle UMETA(DisplayName = "Emote_Idle"),
-	Emote_Talk UMETA(DisplayName = "Emote_Talk"),
-	Emote_Special UMETA(DisplayName = "Emote_Special"),
-
+	Emote_Item UMETA(DisplayName = "Item"),
+	Emote_Defend UMETA(DisplayName = "Defend"),
+	Emote_Shock UMETA(DisplayName = "Shock"),
+	Emote_Idle UMETA(DisplayName = "Idle"),
+	Emote_Special UMETA(DisplayName = "Special")
 };
 
 UENUM(BlueprintType)
@@ -123,6 +121,24 @@ enum ERestorativeType {
 	Item_Revival UMETA(DisplayName = "Revival")
 
 };
+
+UENUM(BlueprintType)
+enum ECamMovementType {
+	NoMovement UMETA(DisplayName = "NoMovement"),
+	Front UMETA(DisplayName = "Front"), //Look at the character from the front straight on.
+	FrontSide UMETA(DisplayName = "FrontSide"), //Look at the character from the front, with an offset to the side (Used when selecting actions
+	Behind UMETA(DisplayName = "Behind"),
+	OverheadFront UMETA(DisplayName = "OverheadFront"), //Look down at target from above
+	OverheadBehind UMETA(DisplayName = "OverheadBehind"),
+	OverheadBehindTarget UMETA(DisplayName = "OverheadBehindTarget"), // Same as OverheadBehind, but zoomout to behind the target enemy instead of behind user
+	Between UMETA(DisplayName = "Between"), //Move to a point between to characters with an offset and look at the point between them
+	Shoulder UMETA(DisplayName = "Shoulder"), //Look over the characters shoulder at target (Used primarily for single target actions)
+	LowAngle UMETA(DisplayName = "LowAngle"), //Look beyond character from behind low angle at target (Used primarily for single target actions)
+	Field UMETA(DisplayName = "Field"),
+	SpecialCam UMETA(DisplayName = "SpecialCam") //For special attacks that doe multiple cam movements, dictated by anim events
+ 
+};
+
 
 
 /**

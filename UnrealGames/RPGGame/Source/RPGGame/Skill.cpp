@@ -15,7 +15,6 @@
 //you might have the skill handle this stuff instead, if you pass in the user
 
 
-//if the skill is responsible for calculating damage, then the skill will need 
 void USkill::OnActivate(ARPGCharacter* User) {
 	//Cycle through list of enemies in game mode, deal damage to them
 	if (IsMultiTarget) {
@@ -31,7 +30,6 @@ void USkill::OnActivate(ARPGCharacter* User) {
 void USkill::UseSkillOnMultiple(ARPGCharacter* User, TArray<ARPGCharacter*> Targets) {
 	for (int i = 0; i < Targets.Num(); i++) {
 		SkillEffect(User, Targets[i]);
-		//GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, FString::Printf(TEXT("Attacking Multiple Enemies: %d"), i));
 	}
 }
 
@@ -41,13 +39,18 @@ void USkill::SkillEffect(ARPGCharacter* User, ARPGCharacter* Target) {
 }
 
 void USkill::AttemptDamageTarget(ARPGCharacter* User, ARPGCharacter* Target) {
-	if (Target->AttemptDodge(User->CalculateAccuracy(Accuracy))) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "---Target Dodged!----");
-	}
-	else {
+	if (!Target->AttemptDodge(User->CalculateAccuracy(Accuracy))) {
 		Target->TakeDamage((CalculateDamage(Target, User)));
 	}
-	
+}
+
+void USkill::UseResource(ARPGCharacter* User) {
+	if (ResourceType == HealthPoints) {
+		User->LoseHealth(Cost);
+	}
+	else {
+		User->LoseSP(Cost);
+	}
 }
 
 void USkill::HealTarget(ARPGCharacter* User, ARPGCharacter* Target) {
@@ -63,14 +66,7 @@ void USkill::Revive(ARPGCharacter* User, ARPGCharacter* Target) {
 
 
 
-void USkill::UseResource(ARPGCharacter* User) {
-	if (ResourceType == HealthPoints) {
-		User->LoseHealth(Cost);
-	}
-	else {
-		User->LoseSP(Cost);
-	}
-}
+
 
 void USkill::OnBegin() {
 

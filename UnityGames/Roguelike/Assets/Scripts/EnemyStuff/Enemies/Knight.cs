@@ -40,6 +40,7 @@ public class Knight : Enemy
         if (!IsAttacking)
         {
             RaycastHit2D check = CheckForWall(MoveDir);
+           // Debug.DrawRay(RB.position, MoveDir, Color.black);
             if (check.collider != null)
             {
                 HitAWall(MoveDir);

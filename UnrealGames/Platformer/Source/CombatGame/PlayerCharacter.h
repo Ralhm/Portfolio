@@ -274,32 +274,29 @@ public:
 	void ExitFlight();
 
 
-	UFUNCTION()
-	void LoseHealth(float amount);
 
-	UFUNCTION()
-	void LoseMana(float amount);
-
-	UFUNCTION()
-	void RestoreHealth(float amount);
-
-	UFUNCTION()
-	void RestoreMana(float amount);
-
-	UFUNCTION()
-	void StartHealing();
-
-	UFUNCTION()
-	void StopHealing();
 
 	UFUNCTION(BlueprintCallable)
 	void LandToJump();
 
 	UFUNCTION(BlueprintCallable)
+	void IceSlidePhysics();
+
+	UFUNCTION(BlueprintCallable)
+	void ElecSlidePhysics();
+
+	UFUNCTION(BlueprintCallable)
+	const FVector CalculateFloorInfluence(const FVector& FloorNormal);
+
+	UFUNCTION(BlueprintCallable)
+	const FVector CalculateElecFloorInfluence(const FVector& FloorNormal);
+
+
+	UFUNCTION(BlueprintCallable)
 	void UpdateFace(FFaceAnimationState state, bool HealthType = false);
 
 	UFUNCTION(BlueprintCallable) //Blueprintcallable so we can increase jump count value when cancelling a slide in blueprints
-		void IncrementJumpCount();
+	void IncrementJumpCount();
 
 	UFUNCTION(BlueprintCallable)
 	void GrappleFocus(FVector Location);
@@ -357,6 +354,15 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ElecDash();
+
+	UFUNCTION(BlueprintCallable)
+	void ElecBallEnter();
+
+	UFUNCTION(BlueprintCallable)
+	void ElecBallMode();
+
+	UFUNCTION(BlueprintCallable)
+	void ElecBallModeEnd();
 
 	UFUNCTION(BlueprintCallable)
 	void ElecGrapple();
@@ -424,6 +430,10 @@ public:
 	float ClimbBoost;
 
 
+
+
+
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "MovementProperties") //Vertical Component of Dash
 		float DashUpPower;
 
@@ -484,6 +494,9 @@ public:
 	float QueueBufferTime; //How much time does a player have after walking off a ledge to still jump
 
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MovementProperties")
+	bool InBallMode;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "DiveProperties") //Horizontal Component of Dash
 		float DivePower;
 
@@ -505,123 +518,213 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "DiveProperties") 
 		float DiveBrakingFriction;
 
+	//How far Forward is the player boosted on initial Ice Boost
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
+	float IceHorizontalPower = 750.0f;
+
+	//How Up Forward is the player boosted on initial Ice Boost
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
+	float IceVerticalPower = 400.0f;
+
+	//How much control does the player have over turning/accelerating
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
+	float IceMovementPower = 1300.0f;
+
+	//How much is the character affected by sliding? (Used in Ice and Electric)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "MovementProperties")
+	float IceSlideForce = 4000000.0;
+
+	//How high can the player jump when in Ice Mode
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
+	float IceJumpPower = 800.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceHorizontalPower;
+	float IceFrictionTime = 0.5f;
 
+	//How high does the player boost when colliding with a wall mid-air in Ice Mode
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceVerticalPower;
+	float IceBouncePower = 1600.0f;
 
-
+	//How long does Ice Mode last
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceMovementPower;
-
-
-		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceJumpPower;
-
-		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceFrictionTime = 0.5f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceBouncePower;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceDuration;
+	float IceDuration = 1.8f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties") 
-		float IceAirControl;
+	float IceAirControl = 2.0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties") 
-		float IceLateralFriction;
+	float IceLateralFriction = 0.3;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties") 
-		float IceGravity;
+	float IceGravity = 1.8f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceFriction;
+	float IceFriction = 0.0f;
+
+	//Keep in mind that these values only come into play when not holding a button
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
+	float IceBrakingDecelerationWalking = 600.0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceBrakingDecelerationWalking;
-
-		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties")
-		float IceBrakingDecelerationFalling;
+	float IceBrakingDecelerationFalling = 150.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "IceProperties") 
-		float IceBrakingFriction;
+	float IceBrakingFriction = 0.6;
 
 
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
-	float FireDashPower;
+	float FireDashPower = 900.0;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-	float FireBouncePower;
+	float FireBouncePower = 350.0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-	float FireBounceEnemyPower;
+	float FireBounceEnemyPower = 800.0;
 
 	//What fraction of the current speed gets carried over into the boost?
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-	float FireBounceBoost;
+	float FireBounceBoost = 0.5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-	float FireBounceAirControl;
+	float FireBounceAirControl = 4.0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
 		float FireAirControl;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-	float FireDuration;
+	float FireDuration = 0.5;
 
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
 	float FireCarryOverFactor = 1.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-		float FireDelayTime;
+		float FireDelayTime = 0.6;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
-		float FireLateralFriction;
+		float FireLateralFriction = 0.3;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
 		float FireGravity;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
-		float FireFriction;
+		float FireFriction = 0.1;
 
+		//Keep in mind that these values only come into play when not holding a button
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
-		float FireBrakingDecelerationFalling;
+	float FireBrakingDecelerationFalling = 200.0;
 
+	//Keep in mind that these values only come into play when not holding a button
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties")
-		float FireBrakingDecelerationWalking;
+	float FireBrakingDecelerationWalking;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FireProperties") 
-		float FireBrakingFrictionFactor;
+	float FireBrakingFrictionFactor;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElectricAscentPower;
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElectricDescentPower;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElecDuration;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElecGravity;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElecRecoilTime;
-
+	//Are we in recoild from landing from a jolt?
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElecRecoilActive;
+	bool ElecRecoilActive;
+
+	//Power with which you ascened when jolting up
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElectricAscentPower = 1200.0;
+
+	//How quickly do you descend when jolting down?
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElectricDescentPower = 1000.0;
+
+	//How long does the jolt up last?
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecDuration = 0.05;
+
+	//Gravity Experienced while in ball mode
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecGravity = 110000.0;
+
+	//Minimum velocity needed to maintain Ball Mode
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float MinElecVelocity = 300.0f;
+
+	//Duration at which you can briefly not move after landing on a flat surface
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecRecoilTime = 0.5;
+
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
-	float ElecBrakingDecelerationFalling;
+	float ElecFallingLateralFriction = 0.4;
 
+	//If the player is going up, adjust amount of force experienced
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float MinElecAngle = 0.0f;
+
+	//Prevent max sliding from occurring when going upside down during loop
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float MinSlideAngle = -0.5;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float MinDragSpeed = 600.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecFriction = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecAirControl = 4.0f;
+
+	//Keep in mind that these values only come into play when not holding a button
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float CentripetalForceScale = 0.1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float CentripetalDistanceCheck = 50.0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ForwardCheck = 50.0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float CentripetalDistanceOffset = 40.0;
+
+	//How much is the character affected by sliding
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecSlideForce = 9000000.0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecForwardForce = 600.0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecGroundDragForce = 0.005;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecAirDragForce = 0.0007;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ElecSteeringPower = 325.0;
+
+	//How much is the slide force modified in it's applied in the oppisite direction?
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	float ReducedSlideFactor = 0.1;
+
+
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	bool ApplyElecCentripetal = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	bool ApplyElecDrag = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	bool ApplyElecGravity = false;
+
+	//Debug for testing differences between hard setting velocity via calculations and using builtin forces
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	bool UseForces = false;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ElectricProperties")
+	FVector ElecForwardVelocity;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GrappleProperties")
 	float MinGrappleDistance;
@@ -957,7 +1060,7 @@ public:
 
 
 	UFUNCTION()
-	void ElecEndGrounded();
+	void ElecEndGrounded(const FHitResult& Hit);
 
 	UFUNCTION()
 	void ElecRecoilTimer();
@@ -975,4 +1078,28 @@ public:
 	void AdvanceFlightAccelTimer();
 
 	FGenericTeamId TeamId;
+
+	UFUNCTION()
+	void LoseHealth(float amount);
+
+	UFUNCTION()
+	void LoseMana(float amount);
+
+	UFUNCTION()
+	void RestoreHealth(float amount);
+
+	UFUNCTION()
+	void RestoreMana(float amount);
+
+	UFUNCTION()
+	void StartHealing();
+
+	UFUNCTION()
+	void StopHealing();
+
+	FHitResult BallModeHit;
+
+	FHitResult BallModeForwardHit;
+
+	bool AlreadyInAir;
 };

@@ -8,6 +8,12 @@
 
 #include "RPGGameGameMode.h"
 
+void ARPGEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+
+
+}
 
 void ARPGEnemy::ChooseAction() {
 	QueuedAction = NormalAttack;
@@ -20,33 +26,48 @@ void ARPGEnemy::BeginAction() {
 		return;
 	}
 
+	ChooseAction();
+
+	ARPGGameGameMode* GameMode = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
 
 
-	StoredTarget = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->GetAllyToTarget();
+	StoredTarget = GameMode->GetAllyToTarget();
 
 
 	if (QueuedAction == UseSkill) {
 		BeginAnimationSkill(SkillComponent->QueuedSkill->SkillType);
+		if (!SkillComponent->QueuedSkill->IsMultiTarget) {
+			LookAtTarget();
+		}
+	}
+	else if (QueuedAction == Defend) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Yellow, FString::Printf(TEXT("Defending!!")));
 	}
 	else {
 		BeginAnimationAction(QueuedAction);
+		LookAtTarget();
+
+		GameMode->TellCameraWhatToDo(this, NormalAttackCameraAngle, true, false, true);
+
 	}
+
 
 }
 
 void ARPGEnemy::Die() {
 	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Magenta, "ENEMY DEATH!!");
-	SetCurrentStatus(Dead);
+	Super::Die();
+
 
 	UAnimInstance* instance = GetMesh()->GetAnimInstance();
 	float MontageLength = instance->Montage_Play(DeathMontage, 1);
 
 
-	Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->RemoveEnemy(this);
-
+	ARPGGameGameMode* GameMode = Cast<ARPGGameGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
+	GameMode->RemoveEnemy(this);
 
 	GetWorld()->GetTimerManager().SetTimer(DeathHandle, this, &ARPGEnemy::DeathEnd, MontageLength);
-
+	GameMode->SetDeathDelayTime(MontageLength);
 
 }
 
@@ -54,3 +75,4 @@ void ARPGEnemy::DeathEnd() {
 	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Magenta, "Enemy going into hidden!!");
 	SetActorHiddenInGame(true);
 }
+
