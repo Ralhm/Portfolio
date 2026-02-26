@@ -22,7 +22,13 @@ using UnityEngine;
 
 //---More unique spells
 
+//Enemy Ideas
+//Guy who accelerates/charges at you
+//Guys who slowly walk at you and shoot at you
+//Guy who sits still and shoots at you
+//Guy who walks at you and does big club slam in 4 cardinal directions when near
 
+//Add instruments when in active combat
 
 
 //---unique assets
@@ -347,9 +353,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player dying!");
     }
-
-
-
 
 
 
