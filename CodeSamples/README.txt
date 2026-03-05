@@ -1,5 +1,7 @@
 A few highlights that I've picked out and put here for application purposes.
 
+I've elected to Put Unity Code in its own section.
+
 PATHFINDER
 My implementation of the A* algorithm, made purely in C++. 
 
